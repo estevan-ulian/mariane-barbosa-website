@@ -3,7 +3,7 @@ import Section from "../components/Section";
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-accentColor-700">
           <Nav />
         <Section>
           <p>
