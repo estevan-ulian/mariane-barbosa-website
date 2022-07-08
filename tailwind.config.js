@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
-  "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
 ],
   theme: {
     fontFamily: {
@@ -39,13 +39,15 @@ module.exports = {
         '900': '#FFB0B0',
         '700': '#FF8989',
         '500': '#D95555',
-      }
+      },
+      transparentColor: 'rgba(0,0,0,0)',
     },
     extend: {
-      backgroundImage: {
-        'hero': "url('/public/images/bg-hero.jpg')",
-        'pattern-bals': "/public/images/pattern-bg.jpg",
-      },
+      
+    },
+    backgroundImage: {
+      'hero': "url('/images/bg-hero.jpg')",
+      'pattern-bals': "url('/images/pattern-bg.jpg')",
     },
   },
   plugins: [],

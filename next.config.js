@@ -3,4 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
+module.exports = {
+  basePath: '/',
+  
+}
+
 module.exports = nextConfig
