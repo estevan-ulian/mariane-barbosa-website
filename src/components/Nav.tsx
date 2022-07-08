@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { CloseIcon, MenuIcon } from './Icons'
 import Button from './Button'
-import LogoDark from '../../public/images/logo-mariane-barbosa.png'
+import LogoLight from '../../public/images/logo-mariane-barbosa.png'
 import Link from 'next/link';
 
 const Nav = () => {
@@ -19,18 +19,18 @@ const Nav = () => {
 
   return (
     <div className={`
-    px-2 lg:px-4 lg:flex min-w-full items-center
+    px-4 lg:flex items-center max-w-[1360px] mx-auto
     `}>
 
         <nav className={`
-            flex justify-between lg:grow h-20 items-center
+            flex justify-between lg:grow h-20 items-center 
         `
         }>
 
             <div className='w-4/5 lg:w-1/5'>
                 <Link href="/">            
                     <Image 
-                    src={LogoDark} 
+                    src={LogoLight} 
                     alt='Logo Mariane Barbosa'
                     width={260}
                     height={48}
@@ -43,7 +43,7 @@ const Nav = () => {
             <div onClick={() => setOpen(!open)}
             className={`absolute z-20 right-2 top-7
             text-3xl cursor-pointer lg:hidden`}>
-                {!open ? <MenuIcon className='w-8 h-8' /> : <CloseIcon className='w-8 h-8' />}
+                {!open ? <MenuIcon className='w-8 h-8 stroke-whiteColor' /> : <CloseIcon className='w-8 h-8 stroke-whiteColor' />}
             </div>
 
             <ul className={`
@@ -70,6 +70,7 @@ const Nav = () => {
                                     border-b-2 border-b-transparentColor
                                     hover:border-b-2 hover:opacity-100 hover:border-secondaryColor-700
                                     `}
+                                    onClick={() => setOpen(false)}
                                     >
                                         {Link.name}
                                     </a>                                

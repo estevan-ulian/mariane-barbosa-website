@@ -4,7 +4,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
 ],
-  theme: {
+  theme: {    
     fontFamily: {
       'inter': 'Inter',
     },
@@ -27,6 +27,7 @@ module.exports = {
       darkColor: {
         '900': '#242424',
         '500': '#595959',
+        '100': '#6c6c6c'
       },
       whiteColor: '#ffffff',
       lightColor: '#ede8e8',
@@ -42,13 +43,15 @@ module.exports = {
       },
       transparentColor: 'rgba(0,0,0,0)',
     },
-    extend: {
-      
+    extend: {    
+      backgroundOpacity: ['active'],
+      backgroundImage: {
+        'hero': "url('/images/bg-hero.jpg')",
+        'pattern-bals': "url('/images/pattern-bg.jpg')",
+        'flower-light': "url('/images/flower-light-color.svg')"
+      },
     },
-    backgroundImage: {
-      'hero': "url('/images/bg-hero.jpg')",
-      'pattern-bals': "url('/images/pattern-bg.jpg')",
-    },
+    
   },
   plugins: [],
 }
