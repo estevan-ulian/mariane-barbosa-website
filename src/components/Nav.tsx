@@ -41,7 +41,7 @@ const Nav = () => {
             
 
             <div onClick={() => setOpen(!open)}
-            className={`absolute z-20 right-2 top-7
+            className={`absolute z-20 right-3 top-6
             text-3xl cursor-pointer lg:hidden`}>
                 {!open ? <MenuIcon className='w-8 h-8 stroke-whiteColor' /> : <CloseIcon className='w-8 h-8 stroke-whiteColor' />}
             </div>
