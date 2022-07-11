@@ -12,7 +12,7 @@ module.exports = {
       '25': '25%',
       '50': '50%',
       '75': '75%',
-    },    
+    },
     fontFamily: {
       'inter': 'Inter',
     },
@@ -74,8 +74,8 @@ module.exports = {
         '95': '0.95',
         '100': '1',
       },
-      dropShadow: {
-        'border' : '-8px 8px 0 0 #f29799'
+      boxShadow: {
+        'img': '-8px 8px 0 0 #F29799'
       }
     },
     

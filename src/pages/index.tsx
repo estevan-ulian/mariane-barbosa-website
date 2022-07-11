@@ -113,17 +113,17 @@ export default function Home() {
 
         </section>
 
-        <section className="flex items-center w-full bg-gradient-to-b from-accentColor-700 to-accentColor-900">
+        <section id="sobre-mim" className="flex items-center w-full bg-gradient-to-b from-accentColor-700 to-accentColor-900">
           <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">
             <div className="grid md:grid-cols-2">
               <div className='columns-1 flex md:justify-end md:p-3'>
-                <div className="">
+                <div className="shadow-[#F29799] shadow-img rounded-[40px] h-[475px]">
                   <Image
                   src='/images/mariane-barbosa.jpg'
                   alt="Mariane Barbosa"          
                   width={486}
                   height={475}
-                  className={`rounded-3xl drop-shadow-border`}
+                  className={`rounded-[40px]`}
                   />
                 </div>
               </div>
@@ -136,7 +136,7 @@ export default function Home() {
                 <p className="opacity-75 mb-4">Para ser feliz, é necessário ouvir as vozes interiores e reconhecer-se como alguém importante e merecedor do seu amor.</p>
               </div>
             </div>
-            <div className="flex flex-col items-center mt-16">
+            <div id="depoimentos" className="flex flex-col items-center mt-16">
               <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">RELATO DOS MEUS PACIENTES ❤️</span>
               <h2 className="text-4xl text-whiteColor">Depoimentos</h2>
               <div className="mt-8 text-dangerColor-500">content...</div>
@@ -145,7 +145,7 @@ export default function Home() {
 
         </section>
 
-        <section className="flex items-center bg-pattern-bals bg-repeat bg-fixed bg-contain bg-center w-full">
+        <section id="faq" className="flex items-center bg-pattern-bals bg-repeat bg-fixed bg-contain bg-center w-full">
           <div className="bg-whiteColor bg-opacity-95 w-full">       
             <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
               <div className="flex flex-col items-center md:w-3/4 mx-auto">

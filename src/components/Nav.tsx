@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { CloseIcon, MenuIcon } from './Icons'
 import Button from './Button'
@@ -7,6 +7,11 @@ import Link from 'next/link';
 
 const Nav = () => {
     const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        open && (document.body.style.overflow = 'hidden')
+        !open && (document.body.style.overflow = 'unset')
+    }, [open])
 
     const Links = [
         {name: 'Sobre Mim', url: '/#sobre-mim'},
