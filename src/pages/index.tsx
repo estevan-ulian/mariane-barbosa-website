@@ -90,19 +90,20 @@ export default function Home() {
         <section className="flex items-center bg-pattern-bals bg-repeat bg-contain bg-center w-full">
           <div className="bg-whiteColor bg-opacity-95 w-full">       
             <div className={`mx-auto max-w-[1360px] py-32 px-4 flex flex-col gap-8`}>
-              
-              <h2 className="text-darkColor-900 text-5xl text-center font-bold mt-3 mb-8">Terapia <span className="text-secondaryColor-700">Online</span></h2>
-              <p className="text-darkColor-100">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
-              <p className="text-darkColor-100 text-sm">Existem muitas plataformas seguras para que você possa realizar o seu atendimento online de uma maneira ética e confiável.</p>
+              <div className="w-3/4 mx-auto flex flex-col gap-8">
+                <h2 className="text-darkColor-900 text-5xl text-center font-bold">Terapia <span className="text-secondaryColor-700">Online</span></h2>
+                <p className="text-darkColor-100 text-xl text-center">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
+                <p className="text-darkColor-100 text-sm text-center">Existem muitas plataformas seguras para que você possa realizar o seu atendimento online de uma maneira ética e confiável.</p>
+              </div>
 
-              <div className="flex justify-around">
+              <div className="flex justify-around w-3/4 mx-auto">
                 <span><span className="text-secondaryColor-700 font-bold">✓</span> Relacionamento</span>
                 <span><span className="text-secondaryColor-700 font-bold">✓</span> Autoestima</span>
                 <span><span className="text-secondaryColor-700 font-bold">✓</span> Ansiedade</span>
                 <span><span className="text-secondaryColor-700 font-bold">✓</span> Depressão</span>
               </div>
 
-              <div className="flex justify-center mt-8">
+              <div className="flex justify-center mt-4">
                 <Link href="/#contato">
                 <a className="text-center border-2 border-accentColor-700 rounded-full px-10 py-2 text-accentColor-700 font-bold text-xl transition-all duration-300 hover:border-secondaryColor-700 hover:bg-secondaryColor-700 hover:text-whiteColor">Agende sua Consulta</a>
                 </Link>              
@@ -113,14 +114,17 @@ export default function Home() {
         </section>
 
         <section className="flex items-center w-full bg-gradient-to-b from-accentColor-700 to-accentColor-900">
-          <div className="max-w-[1360px] mx-auto py-32 px-4 flex flex-col gap-6">
-            <div className={`rounded-3xl drop-shadow-border`}>
+          <div className="max-w-[1360px] mx-auto py-32 px-4 grid grid-cols-2">
+            <div className='columns-1 flex justify-end p-3'>
               <Image
               src='/images/mariane-barbosa.jpg'
               alt="Mariane Barbosa"
               width={350}
               height={350}              
               />
+            </div>
+            <div className="columns-1 p-3">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure fuga placeat ab ipsum earum iusto deleniti quae, ea totam rerum reiciendis tempore recusandae ex accusantium neque! Blanditiis nesciunt quo quod?</p>
             </div>
           </div>
 
