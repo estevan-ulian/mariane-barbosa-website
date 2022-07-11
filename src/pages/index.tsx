@@ -215,7 +215,7 @@ export default function Home() {
 
                 <article className="cursor-pointer">
                   <div className="w-full relative">
-                    <Image src='/images/4-tecnicas-que-ajudam-a-controlar-a-ansiedade.jpg' layout="responsive" width={384} height={214} alt='blog' />
+                    <Image src='/images/relacao-abusiva-10-sinais-de-alerta.jpg' layout="responsive" width={384} height={214} alt='blog' />
                   </div>
                   <div className="p-3">
                     <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3">Relação Abusiva: 10 Sinais De Alerta</h4>
