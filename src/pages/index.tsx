@@ -25,9 +25,9 @@ export default function Home() {
           </div>          
         </HeroSection>
 
-        <section id="" className={`flex items-center bg-flower-light bg-no-repeat bg-contain bg-right-bottom w-full`}>
+        <section id="" className={`flex items-center bg-flower-light bg-no-repeat bg-auto bg-right-top w-full`}>
           <div className={`bg-whiteColor bg-opacity-80 w-full`}>
-            <div className="max-w-[1360px] mx-auto py-32 px-4">
+            <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">
               <div className={`lg:pr-[50%]`}>
                 <h2 className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">Qualidade de vida</h2>
                 <h1 className="text-darkColor-900 text-5xl font-bold mt-3 mb-8">Por que fazer <span className="text-secondaryColor-700">terapia?</span></h1>
@@ -89,14 +89,14 @@ export default function Home() {
 
         <section className="flex items-center bg-pattern-bals bg-repeat bg-contain bg-center w-full">
           <div className="bg-whiteColor bg-opacity-95 w-full">       
-            <div className={`mx-auto max-w-[1360px] py-32 px-4 flex flex-col gap-8`}>
-              <div className="w-3/4 mx-auto flex flex-col gap-8">
+            <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
+              <div className="lg:w-3/4 mx-auto flex flex-col gap-8">
                 <h2 className="text-darkColor-900 text-5xl text-center font-bold">Terapia <span className="text-secondaryColor-700">Online</span></h2>
                 <p className="text-darkColor-100 text-xl text-center">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
                 <p className="text-darkColor-100 text-sm text-center">Existem muitas plataformas seguras para que você possa realizar o seu atendimento online de uma maneira ética e confiável.</p>
               </div>
 
-              <div className="flex justify-around w-3/4 mx-auto">
+              <div className="flex flex-wrap gap-4 justify-around lg:w-3/4 mx-auto">
                 <span><span className="text-secondaryColor-700 font-bold">✓</span> Relacionamento</span>
                 <span><span className="text-secondaryColor-700 font-bold">✓</span> Autoestima</span>
                 <span><span className="text-secondaryColor-700 font-bold">✓</span> Ansiedade</span>
@@ -114,18 +114,70 @@ export default function Home() {
         </section>
 
         <section className="flex items-center w-full bg-gradient-to-b from-accentColor-700 to-accentColor-900">
-          <div className="max-w-[1360px] mx-auto py-32 px-4 grid grid-cols-2">
-            <div className='columns-1 flex justify-end p-3'>
-              <Image
-              src='/images/mariane-barbosa.jpg'
-              alt="Mariane Barbosa"
-              width={350}
-              height={350}              
-              />
+          <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">
+            <div className="grid md:grid-cols-2">
+              <div className='columns-1 flex md:justify-end md:p-3'>
+                <div className="">
+                  <Image
+                  src='/images/mariane-barbosa.jpg'
+                  alt="Mariane Barbosa"          
+                  width={486}
+                  height={475}
+                  className={`rounded-3xl drop-shadow-border`}
+                  />
+                </div>
+              </div>
+              <div className="columns-1 flex flex-col mt-5 md:mt-0 md:p-3 text-whiteColor text-base font-light">
+                <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">PSICÓLOGA CLÍNICA - CRP 06/17024</span>
+                <h1 className="font-bold text-4xl md:text-5xl mb-6">Mariane Barbosa</h1>
+                <p className="opacity-75 mb-4">Como psicóloga clínica atuo para que cada indivíduo encontre sua própria verdade. Acredito que cada pessoa seja única e mereça ser respeitada, acredito no poder do ser humano para superar seus obstáculos e isso me motiva bastante!</p>
+                <p className="opacity-75 mb-4">Acredito muito na interdisciplinaridade e nas parcerias profissionais e estou sempre buscando conhecimentos novos, ampliando a possibilidade de entregar o melhor para todos os meus pacientes.</p>
+                <p className="opacity-75 mb-4">Meu objetivo é criar um espaço acolhedor, onde a pessoa se sinta respeitada em suas individualidades, num lugar em que possa fazer uso de sua verdadeira história para construir soluções reais diante dos problemas.</p>
+                <p className="opacity-75 mb-4">Para ser feliz, é necessário ouvir as vozes interiores e reconhecer-se como alguém importante e merecedor do seu amor.</p>
+              </div>
             </div>
-            <div className="columns-1 p-3">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure fuga placeat ab ipsum earum iusto deleniti quae, ea totam rerum reiciendis tempore recusandae ex accusantium neque! Blanditiis nesciunt quo quod?</p>
+            <div className="flex flex-col items-center mt-16">
+              <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">RELATO DOS MEUS PACIENTES ❤️</span>
+              <h2 className="text-4xl text-whiteColor">Depoimentos</h2>
+              <div className="mt-8 text-dangerColor-500">content...</div>
             </div>
+          </div>
+
+        </section>
+
+        <section className="flex items-center bg-pattern-bals bg-repeat bg-contain bg-center w-full">
+          <div className="bg-whiteColor bg-opacity-95 w-full">       
+            <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
+              <div className="flex flex-col items-center md:w-3/4 mx-auto">
+                <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">PERGUNTAS  FREQUENTES</span>
+                <h1 className="font-bold text-5xl mb-6">FAQ</h1>
+                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
+                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">QUAL ABORDAGEM É UTILIZADA NAS SESSÕES?</summary>
+                  <p className="">Eu trabalho com a abordagem Terapia Cognitivo Comportamental, que visa o objetivo da mudança através de uma visão direcionada às ações que o paciente deseja tomar para resolver um problema. Além disso, a TCC tem base científicas comprovadas e permite que o paciente identifique padrões de pensamentos negativos entre outros processos adaptativos.</p>
+                </details>
+                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
+                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">COMO FAÇO PARA AGENDAR UMA CONSULTA?</summary>
+                  <p>Agendar uma consulta é muito simples. Basta entrar em contato comigo clicando aqui que a gente combina o melhor horário da sua sessão.</p>
+                </details>
+                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
+                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">COMO DEVO AGIR DURANTE AS SESSÕES?</summary>
+                  <p>Eu recebo o paciente em um ambiente acolhedor, seguro e sigiloso, e vou conduzindo a conversa por meio de perguntas que permitem ao paciente expressar suas questões e inseguranças.</p>
+                </details>
+                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
+                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">QUANTO TEMPO DURA UMA SESSÃO E QUAL É A FREQUÊNCIA?</summary>
+                  <p>As sessões duram em média 50 minutos e são realizadas semanalmente.</p>
+                </details>
+                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
+                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">COMO FUNCIONA A TERAPIA ONLINE?</summary>
+                  <p>As terapias online acontecem no conforto da sua casa ou do local que você tenha preferência e disposição para realizar as sessões utilizando um aparelho celular ou computador conectado à internet. Pouco antes da sessão é enviado um link para realização da vídeo chamada.</p>
+                </details>
+                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
+                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">QUAIS OS HORÁRIOS DE ATENDIMENTO?</summary>
+                  <p>Os atendimentos são feitos de segunda à sexta-feira das 14h às 20h. Minha agenda costuma estar equilibrada, mas consigo abrir exceções de horário.</p>
+                </details>
+                
+              </div>
+            </div>          
           </div>
 
         </section>

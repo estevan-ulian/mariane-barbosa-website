@@ -4,7 +4,15 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
 ],
-  theme: {    
+  theme: {
+    backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+      '25': '25%',
+      '50': '50%',
+      '75': '75%',
+    },    
     fontFamily: {
       'inter': 'Inter',
     },
@@ -30,7 +38,7 @@ module.exports = {
         '100': '#6c6c6c'
       },
       whiteColor: '#ffffff',
-      lightColor: '#ede8e8',
+      lightColor: '#e8e8e8',
       successColor: {
         '900': '#D7FFC4',
         '700': '#beff9f',

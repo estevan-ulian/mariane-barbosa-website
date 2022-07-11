@@ -63,7 +63,7 @@ const Nav = () => {
                         return (
                             <li key={i} className={`lg:flex lg:items-center lg:justify-center`}>                                
                                     <a href={Link.url} className={`
-                                    text-whiteColor cursor-pointer opacity-50
+                                    text-whiteColor cursor-pointer lg:opacity-50
                                     text-xl py-1 
                                     lg:text-base lg:my-0 lg:py-3
                                     transition-all duration-400
@@ -83,7 +83,7 @@ const Nav = () => {
                 <Button className="">
                     <Link href="/">
                         <a className={`
-                        border rounded-full border-whiteColor px-5 py-2 text-whiteColor text-2xl lg:text-base
+                        border rounded-full border-whiteColor px-10 py-4 lg:py-2 text-whiteColor text-2xl lg:text-base
                         transition-all duration-300 hover:bg-secondaryColor-700
                         `}
                         >Fale comigo!</a>
