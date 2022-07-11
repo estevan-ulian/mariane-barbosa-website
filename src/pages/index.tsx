@@ -87,7 +87,7 @@ export default function Home() {
 
         </section>
 
-        <section className="flex items-center bg-pattern-bals bg-repeat bg-contain bg-center w-full">
+        <section className="flex items-center bg-pattern-bals bg-repeat bg-contain bg-center bg-fixed w-full">
           <div className="bg-whiteColor bg-opacity-95 w-full">       
             <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
               <div className="lg:w-3/4 mx-auto flex flex-col gap-8">
@@ -145,7 +145,7 @@ export default function Home() {
 
         </section>
 
-        <section className="flex items-center bg-pattern-bals bg-repeat bg-contain bg-center w-full">
+        <section className="flex items-center bg-pattern-bals bg-repeat bg-fixed bg-contain bg-center w-full">
           <div className="bg-whiteColor bg-opacity-95 w-full">       
             <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
               <div className="flex flex-col items-center md:w-3/4 mx-auto">
@@ -180,6 +180,52 @@ export default function Home() {
             </div>          
           </div>
 
+        </section>
+
+        <section className="flex items-center bg-whiteColor w-full">
+          <div className="w-full">       
+            <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
+              <div className="flex flex-col gap-3">
+                <span className="text-secondaryColor-700 uppercase text-sm font-bold">POSTAGENS RECENTES</span>
+                <h1 className="font-bold text-5xl mb-6 uppercase">Blog</h1>
+                <p className="text-darkColor-100 md:w-2/4">Escrevo textos sobre autoestima, autoconhecimento e liberdade emocional para ajudar pessoas levando informações certas que contribuem para o bem-estar do leitor.</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+
+                <article className="cursor-pointer relative">
+                  <div className="w-full relative">
+                    <Image src='/images/4-tecnicas-que-ajudam-a-controlar-a-ansiedade.jpg' layout="responsive" width={384} height={214} alt='blog' />
+                  </div>
+                  <div className="p-3">
+                    <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3">4 Técnicas Que Ajudam A Controlar A Ansiedade</h4>
+                    <p className="text-darkColor-100">Você tem ansiedade? Sua ansiedade é ‘saudável’ ou ‘patológica’? Você sabe qual seria a diferença e como identificá-las? ...</p>
+                  </div>                  
+                </article>
+
+                <article className="cursor-pointer">
+                  <div className="w-full relative">
+                    <Image src='/images/7-atitudes-que-podem-aumentar-a-sua-autoestima.jpg' layout="responsive" width={384} height={214} alt='blog' />
+                  </div>
+                  <div className="p-3">
+                    <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3">7 Atitudes Que Podem Aumentar A Sua Autoestima</h4>
+                    <p className="text-darkColor-100">São inúmeras as atitudes que podem aumentar a autoestima, mas antes, vamos entender melhor como ela funciona? ...</p>
+                  </div>                  
+                </article>
+
+                <article className="cursor-pointer">
+                  <div className="w-full relative">
+                    <Image src='/images/4-tecnicas-que-ajudam-a-controlar-a-ansiedade.jpg' layout="responsive" width={384} height={214} alt='blog' />
+                  </div>
+                  <div className="p-3">
+                    <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3">Relação Abusiva: 10 Sinais De Alerta</h4>
+                    <p className="text-darkColor-100">Diferente do que muitos imaginam, uma relação abusiva nem sempre inicia com a violência física, muitas vezes não chega....</p>
+                  </div>                  
+                </article>
+
+              </div>
+            </div>
+          </div>
         </section>
 
         <Footer />

@@ -56,7 +56,8 @@ module.exports = {
       backgroundImage: {
         'hero': "url('/images/bg-hero.jpg')",
         'pattern-bals': "url('/images/pattern-bg.jpg')",
-        'flower-light': "url('/images/flower-light-color.svg')"
+        'flower-light': "url('/images/flower-light-color.svg')",
+        'footer': "url('/images/bg-footer.jpg')",
       },
       opacity: {
         '10': '0.1',
