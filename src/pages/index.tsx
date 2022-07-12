@@ -4,10 +4,13 @@ import HeroSection from "../components/HeroSection";
 import Link from "next/link";
 import Image from "next/image";
 import Depoimentos from "../components/Depoimentos";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <>
+    <>  <Head>
+          <title>Mariane Barbosa - Psicóloga Clínica - Atendimento Online</title>
+        </Head>
         <Nav />
         <HeroSection>
           <div className="
