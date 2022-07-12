@@ -18,3 +18,16 @@ html, body {
     font-size: 24px !important;
     font-weight: bold;
 }
+
+.swiper-button-next {
+    position: absolute;
+    top: 40% !important;
+    right: 0 !important;
+}
+
+.swiper-button-prev {
+    position: absolute;
+    top: 40% !important;
+    left: 0 !important;
+}
+

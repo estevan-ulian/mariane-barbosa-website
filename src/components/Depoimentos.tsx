@@ -42,7 +42,7 @@ export default function Depoimentos() {
                 <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">RELATO DOS MEUS PACIENTES ❤️</span>
                 <h2 className="text-4xl text-whiteColor">Depoimentos</h2>
             </div>
-            <div className='max-w-[300px] w-full  sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto'>              
+            <div className='max-w-[280px] w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto'>              
                 
                 <Slider settings={settings} className='max-w-full text-lightColor swiper-button-disabled md:swiper-button-enabled' >
 

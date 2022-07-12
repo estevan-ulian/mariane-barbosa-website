@@ -34,7 +34,7 @@ export default function Home() {
             <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">
               <div className={`lg:pr-[50%]`}>
                 <h2 className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">Qualidade de vida</h2>
-                <h1 className="text-darkColor-900 text-5xl font-bold mt-3 mb-8">Por que fazer <span className="text-secondaryColor-700">terapia?</span></h1>
+                <h1 className="text-darkColor-900 text-4xl md:text-6xl font-bold mt-3 mb-8">Por que fazer <span className="text-secondaryColor-700">terapia?</span></h1>
                 <p className='text-darkColor-100'>Antes de tudo, psicoterapia não é sinônimo de doença. A psicoterapia serve para superar dificuldades que a vida nos apresenta e ajudar na prevenção de transtornos psicológicos que dificultam o convívio em sociedade.</p>
               </div>
 
@@ -95,8 +95,8 @@ export default function Home() {
           <div className="bg-whiteColor bg-opacity-95 w-full">       
             <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
               <div className="lg:w-3/4 mx-auto flex flex-col gap-8">
-                <h2 className="text-darkColor-900 text-5xl text-center font-bold">Terapia <span className="text-secondaryColor-700">Online</span></h2>
-                <p className="text-darkColor-100 text-xl text-center">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
+                <h2 className="text-darkColor-900 text-4xl md:text-6xl text-center font-bold">Terapia <span className="text-secondaryColor-700">Online</span></h2>
+                <p className="text-darkColor-100 text-lg md:text-xl text-center">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
                 <p className="text-darkColor-100 text-sm text-center">Existem muitas plataformas seguras para que você possa realizar o seu atendimento online de uma maneira ética e confiável.</p>
               </div>
 
@@ -109,7 +109,7 @@ export default function Home() {
 
               <div className="flex justify-center mt-4">
                 <Link href="/#contato">
-                <a className="text-center border-2 border-accentColor-700 rounded-full px-10 py-2 text-accentColor-700 font-bold text-xl transition-all duration-300 hover:border-secondaryColor-700 hover:bg-secondaryColor-700 hover:text-whiteColor">Agende sua Consulta</a>
+                <a className="text-center border-2 border-accentColor-700 rounded-full px-10 py-2 text-accentColor-700 font-bold text-lg md:text-xl transition-all duration-300 hover:border-secondaryColor-700 hover:bg-secondaryColor-700 hover:text-whiteColor">Agende sua Consulta</a>
                 </Link>              
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function Home() {
               </div>
               <div className="columns-1 flex flex-col mt-5 md:mt-0 md:p-3 text-whiteColor text-base font-light">
                 <span className="text-secondaryColor-700 uppercase text-sm font-bold mt-4 md:mt-0 mb-2">PSICÓLOGA CLÍNICA - CRP 06/17024</span>
-                <h1 className="font-bold text-4xl md:text-5xl mb-6">Mariane Barbosa</h1>
+                <h1 className="font-bold text-4xl md:text-6xl mb-6">Mariane Barbosa</h1>
                 <p className="opacity-75 mb-4">Como psicóloga clínica atuo para que cada indivíduo encontre sua própria verdade. Acredito que cada pessoa seja única e mereça ser respeitada, acredito no poder do ser humano para superar seus obstáculos e isso me motiva bastante!</p>
                 <p className="opacity-75 mb-4">Acredito muito na interdisciplinaridade e nas parcerias profissionais e estou sempre buscando conhecimentos novos, ampliando a possibilidade de entregar o melhor para todos os meus pacientes.</p>
                 <p className="opacity-75 mb-4">Meu objetivo é criar um espaço acolhedor, onde a pessoa se sinta respeitada em suas individualidades, num lugar em que possa fazer uso de sua verdadeira história para construir soluções reais diante dos problemas.</p>
@@ -153,7 +153,7 @@ export default function Home() {
             <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
               <div className="flex flex-col items-center md:w-3/4 mx-auto">
                 <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">PERGUNTAS  FREQUENTES</span>
-                <h1 className="font-bold text-5xl mb-6">FAQ</h1>
+                <h1 className="font-bold text-4xl md:text-6xl mb-6">FAQ</h1>
                 <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
                   <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">QUAL ABORDAGEM É UTILIZADA NAS SESSÕES?</summary>
                   <p className="">Eu trabalho com a abordagem Terapia Cognitivo Comportamental, que visa o objetivo da mudança através de uma visão direcionada às ações que o paciente deseja tomar para resolver um problema. Além disso, a TCC tem base científicas comprovadas e permite que o paciente identifique padrões de pensamentos negativos entre outros processos adaptativos.</p>
@@ -190,7 +190,7 @@ export default function Home() {
             <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
               <div className="flex flex-col gap-3">
                 <span className="text-secondaryColor-700 uppercase text-sm font-bold">POSTAGENS RECENTES</span>
-                <h1 className="font-bold text-5xl mb-6 uppercase">Blog</h1>
+                <h1 className="font-bold text-4xl md:text-6xl mb-6 uppercase">Blog</h1>
                 <p className="text-darkColor-100 md:w-2/4">Escrevo textos sobre autoestima, autoconhecimento e liberdade emocional para ajudar pessoas levando informações certas que contribuem para o bem-estar do leitor.</p>
               </div>
 
