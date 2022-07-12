@@ -18,12 +18,12 @@ export default function Home() {
           transform transition-all ease-out max-w-[1360px] mx-auto
           "
           >
-            <h2 className="text-whiteColor uppercase text-md xl:text-xl mb-4">Psicóloga Clínica Mariane Barbosa</h2>
-            <h1 className="text-whiteColor text-4xl md:text-6xl font-bold mt-3 mb-8"><span className="text-secondaryColor-700 block mb-4">Psicoterapia online</span> Atendimento individual</h1>
+            <h2 className="text-whiteColor uppercase text-sm font-bold mb-4">Psicóloga Clínica Mariane Barbosa</h2>
+            <h1 className="text-whiteColor text-3xl md:text-5xl lg:text-6xl font-bold mt-3 mb-8"><span className="text-secondaryColor-700 block mb-4">Psicoterapia online</span> Atendimento individual</h1>
             <p className="text-whiteColor mb-12">Um trabalho de aprofundamento pessoal, que possibilita à pessoa a descoberta, reavaliação e trabalho sobre suas crenças e perspectivas da vida, fazendo com que ela se torne mais consciente das suas possibilidades e potencialidades.</p>
             <Link href='/'>
               <a className={`
-              text-whiteColor bg-secondaryColor-700 py-2 px-10 text-md rounded-full max-w-max text-center transition-all duration-300 hover:scale-105
+              text-whiteColor bg-secondaryColor-700 py-2 px-10 text-lg md:text-xl rounded-full max-w-max text-center transition-all duration-300 hover:scale-105
               `}>Vamos Conversar?</a>
             </Link>
           </div>          
@@ -34,7 +34,7 @@ export default function Home() {
             <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">
               <div className={`lg:pr-[50%]`}>
                 <h2 className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">Qualidade de vida</h2>
-                <h1 className="text-darkColor-900 text-4xl md:text-6xl font-bold mt-3 mb-8">Por que fazer <span className="text-secondaryColor-700">terapia?</span></h1>
+                <h1 className="text-darkColor-900 text-3xl md:text-5xl font-bold mt-3 mb-8">Por que fazer <span className="text-secondaryColor-700">terapia?</span></h1>
                 <p className='text-darkColor-100'>Antes de tudo, psicoterapia não é sinônimo de doença. A psicoterapia serve para superar dificuldades que a vida nos apresenta e ajudar na prevenção de transtornos psicológicos que dificultam o convívio em sociedade.</p>
               </div>
 
@@ -95,7 +95,7 @@ export default function Home() {
           <div className="bg-whiteColor bg-opacity-95 w-full">       
             <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
               <div className="lg:w-3/4 mx-auto flex flex-col gap-8">
-                <h2 className="text-darkColor-900 text-4xl md:text-6xl text-center font-bold">Terapia <span className="text-secondaryColor-700">Online</span></h2>
+                <h2 className="text-darkColor-900 text-3xl md:text-5xl text-center font-bold">Terapia <span className="text-secondaryColor-700">Online</span></h2>
                 <p className="text-darkColor-100 text-lg md:text-xl text-center">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
                 <p className="text-darkColor-100 text-sm text-center">Existem muitas plataformas seguras para que você possa realizar o seu atendimento online de uma maneira ética e confiável.</p>
               </div>
@@ -118,8 +118,8 @@ export default function Home() {
         </section>
 
         <section id="sobre-mim" className="flex items-center w-full bg-gradient-to-b from-accentColor-700 to-accentColor-900">
-          <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4 bg-flower-light-reverse bg-no-repeat bg-left">
-            <div className="grid md:grid-cols-2">
+          <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">
+            <div className="grid md:grid-cols-2 bg-flower-light-reverse bg-no-repeat bg-bottom bg-contain">
               <div className='columns-1 flex md:justify-end md:p-3'>
                 <div>
                   <div className="shadow-[#F29799] shadow-img rounded-[40px] flex">
@@ -135,7 +135,7 @@ export default function Home() {
               </div>
               <div className="columns-1 flex flex-col mt-5 md:mt-0 md:p-3 text-whiteColor text-base font-light">
                 <span className="text-secondaryColor-700 uppercase text-sm font-bold mt-4 md:mt-0 mb-2">PSICÓLOGA CLÍNICA - CRP 06/17024</span>
-                <h1 className="font-bold text-4xl md:text-6xl mb-6">Mariane Barbosa</h1>
+                <h1 className="font-bold text-3xl md:text-4xl mb-6">Mariane Barbosa</h1>
                 <p className="opacity-75 mb-4">Como psicóloga clínica atuo para que cada indivíduo encontre sua própria verdade. Acredito que cada pessoa seja única e mereça ser respeitada, acredito no poder do ser humano para superar seus obstáculos e isso me motiva bastante!</p>
                 <p className="opacity-75 mb-4">Acredito muito na interdisciplinaridade e nas parcerias profissionais e estou sempre buscando conhecimentos novos, ampliando a possibilidade de entregar o melhor para todos os meus pacientes.</p>
                 <p className="opacity-75 mb-4">Meu objetivo é criar um espaço acolhedor, onde a pessoa se sinta respeitada em suas individualidades, num lugar em que possa fazer uso de sua verdadeira história para construir soluções reais diante dos problemas.</p>
@@ -200,7 +200,7 @@ export default function Home() {
                   <div className="w-full relative">
                     <Image src='/images/4-tecnicas-que-ajudam-a-controlar-a-ansiedade.jpg' layout="responsive" width={384} height={214} alt='blog' />
                   </div>
-                  <div className="p-3">
+                  <div className="p-3 border-l border-b border-r border-accentColor-700 rounded-b-2xl border-opacity-10">
                     <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3">4 Técnicas Que Ajudam A Controlar A Ansiedade</h4>
                     <p className="text-darkColor-100">Você tem ansiedade? Sua ansiedade é ‘saudável’ ou ‘patológica’? Você sabe qual seria a diferença e como identificá-las? ...</p>
                   </div>                  
@@ -210,7 +210,7 @@ export default function Home() {
                   <div className="w-full relative">
                     <Image src='/images/7-atitudes-que-podem-aumentar-a-sua-autoestima.jpg' layout="responsive" width={384} height={214} alt='blog' />
                   </div>
-                  <div className="p-3">
+                  <div className="p-3 border-l border-b border-r border-accentColor-700 rounded-b-2xl border-opacity-10">
                     <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3">7 Atitudes Que Podem Aumentar A Sua Autoestima</h4>
                     <p className="text-darkColor-100">São inúmeras as atitudes que podem aumentar a autoestima, mas antes, vamos entender melhor como ela funciona? ...</p>
                   </div>                  
@@ -220,7 +220,7 @@ export default function Home() {
                   <div className="w-full relative">
                     <Image src='/images/relacao-abusiva-10-sinais-de-alerta.jpg' layout="responsive" width={384} height={214} alt='blog' />
                   </div>
-                  <div className="p-3">
+                  <div className="p-3 border-l border-b border-r border-accentColor-700 rounded-b-2xl border-opacity-10">
                     <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3">Relação Abusiva: 10 Sinais De Alerta</h4>
                     <p className="text-darkColor-100">Diferente do que muitos imaginam, uma relação abusiva nem sempre inicia com a violência física, muitas vezes não chega....</p>
                   </div>                  

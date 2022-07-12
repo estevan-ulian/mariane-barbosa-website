@@ -4,7 +4,7 @@ export default function Document() {
     return (
         <Html lang='pt-BR'>
             <Head />
-            <body className={`overflow-x-hidden font-inter`}>
+            <body className={`overflow-x-hidden font-inter scroll-smooth`}>
                 <Main />
                 <NextScript />
             </body>

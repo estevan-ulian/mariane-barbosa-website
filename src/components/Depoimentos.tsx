@@ -37,7 +37,7 @@ export default function Depoimentos() {
 
     return (
 
-        <div id="depoimentos" className="max-w-full flex flex-col items-center mt-16 bg-aspas bg-no-repeat bg-right-top bg-blend-multiply">
+        <div id="depoimentos" className="max-w-full flex flex-col items-center mt-16 bg-aspas bg-no-repeat bg-right-top bg-25">
             <div className='flex flex-col mb-8'>
                 <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">RELATO DOS MEUS PACIENTES ❤️</span>
                 <h2 className="text-4xl text-whiteColor">Depoimentos</h2>
