@@ -37,23 +37,23 @@ export default function Depoimentos() {
 
     return (
 
-        <div id="depoimentos" className="flex flex-col items-center mt-16 bg-aspas bg-no-repeat bg-right-top bg-blend-multiply">
-            <div className='flex flex-col'>
+        <div id="depoimentos" className="max-w-full flex flex-col items-center mt-16 bg-aspas bg-no-repeat bg-right-top bg-blend-multiply">
+            <div className='flex flex-col mb-8'>
                 <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">RELATO DOS MEUS PACIENTES ❤️</span>
                 <h2 className="text-4xl text-whiteColor">Depoimentos</h2>
             </div>
-            <div className='max-w-[440px] sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto'>              
+            <div className='max-w-[300px] w-full  sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto'>              
                 
-                <Slider settings={settings} className='w-full text-lightColor' >
+                <Slider settings={settings} className='max-w-full text-lightColor swiper-button-disabled md:swiper-button-enabled' >
 
                     {depoimentos.map((value, index) => {
                         const { depoimento, idade, autor, profissao } = value
                         return (
 
-                            <Slide key={index} className='w-auto text-center cursor-default pb-4'>
-                                <div className='w-full py-6 px-16'>
-                                    <p>{depoimento}</p>
-                                    <span className='text-sm text-secondaryColor-900 font-light'>{autor}., {idade} anos - {profissao}</span>
+                            <Slide key={index} className='w-auto text-center cursor-default pb-10'>
+                                <div className='w-full px-10'>
+                                    <p className='text-sm md:text-base'>{depoimento}</p>
+                                    <span className='text-sm text-secondaryColor-500 font-light'>{autor}., {idade} anos - {profissao}</span>
                                 </div>
                             </Slide>
 

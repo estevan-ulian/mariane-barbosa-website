@@ -14,7 +14,7 @@ interface SliderProps {
     className: string
 }
 
-export default function Slider({ children, settings, className }: SliderProps) {
+export default function Slider({ children, settings, className}: SliderProps) {
     
     return (
             <Swiper modules={[Navigation, Pagination, A11y]} {...settings} className={className}>
