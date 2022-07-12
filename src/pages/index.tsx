@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import HeroSection from "../components/HeroSection";
 import Link from "next/link";
 import Image from "next/image";
+import Depoimentos from "../components/Depoimentos";
 
 export default function Home() {
   return (
@@ -114,21 +115,23 @@ export default function Home() {
         </section>
 
         <section id="sobre-mim" className="flex items-center w-full bg-gradient-to-b from-accentColor-700 to-accentColor-900">
-          <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">
+          <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4 bg-flower-light-reverse bg-no-repeat bg-left">
             <div className="grid md:grid-cols-2">
               <div className='columns-1 flex md:justify-end md:p-3'>
-                <div className="shadow-[#F29799] shadow-img rounded-[40px] h-[475px]">
-                  <Image
-                  src='/images/mariane-barbosa.jpg'
-                  alt="Mariane Barbosa"          
-                  width={486}
-                  height={475}
-                  className={`rounded-[40px]`}
-                  />
+                <div>
+                  <div className="shadow-[#F29799] shadow-img rounded-[40px] flex">
+                    <Image
+                    src='/images/mariane-barbosa.jpg'
+                    alt="Mariane Barbosa"          
+                    width={486}
+                    height={475}
+                    className={`rounded-[40px]`}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="columns-1 flex flex-col mt-5 md:mt-0 md:p-3 text-whiteColor text-base font-light">
-                <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">PSICÓLOGA CLÍNICA - CRP 06/17024</span>
+                <span className="text-secondaryColor-700 uppercase text-sm font-bold mt-4 md:mt-0 mb-2">PSICÓLOGA CLÍNICA - CRP 06/17024</span>
                 <h1 className="font-bold text-4xl md:text-5xl mb-6">Mariane Barbosa</h1>
                 <p className="opacity-75 mb-4">Como psicóloga clínica atuo para que cada indivíduo encontre sua própria verdade. Acredito que cada pessoa seja única e mereça ser respeitada, acredito no poder do ser humano para superar seus obstáculos e isso me motiva bastante!</p>
                 <p className="opacity-75 mb-4">Acredito muito na interdisciplinaridade e nas parcerias profissionais e estou sempre buscando conhecimentos novos, ampliando a possibilidade de entregar o melhor para todos os meus pacientes.</p>
@@ -136,11 +139,8 @@ export default function Home() {
                 <p className="opacity-75 mb-4">Para ser feliz, é necessário ouvir as vozes interiores e reconhecer-se como alguém importante e merecedor do seu amor.</p>
               </div>
             </div>
-            <div id="depoimentos" className="flex flex-col items-center mt-16">
-              <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">RELATO DOS MEUS PACIENTES ❤️</span>
-              <h2 className="text-4xl text-whiteColor">Depoimentos</h2>
-              <div className="mt-8 text-dangerColor-500">content...</div>
-            </div>
+            
+              <Depoimentos />
           </div>
 
         </section>

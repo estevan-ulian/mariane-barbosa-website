@@ -58,6 +58,8 @@ module.exports = {
         'pattern-bals': "url('/images/pattern-bg.jpg')",
         'flower-light': "url('/images/flower-light-color.svg')",
         'footer': "url('/images/bg-footer.jpg')",
+        'flower-light-reverse': "url('/images/flower-light-color-reverse.svg')",
+        'aspas': "url('/images/depo-aspas.png')"
       },
       opacity: {
         '10': '0.1',
