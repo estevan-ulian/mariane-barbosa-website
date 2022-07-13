@@ -1,4 +1,5 @@
 import { Slider, SliderProps, Slide } from './Slider/Index'
+import Subtitle from './Subtitle'
 
 export default function Depoimentos() {
     const settings: SliderProps = {
@@ -39,8 +40,8 @@ export default function Depoimentos() {
 
         <div id="depoimentos" className="max-w-full flex flex-col items-center mt-16 bg-aspas bg-no-repeat bg-right-top bg-25">
             <div className='flex flex-col mb-8'>
-                <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">RELATO DOS MEUS PACIENTES ❤️</span>
-                <h2 className="text-4xl text-whiteColor">Depoimentos</h2>
+                <Subtitle textColor='secondary' content="RELATO DOS MEUS PACIENTES ❤️" />
+                <h3 className="text-4xl text-whiteColor">Depoimentos</h3>
             </div>
             <div className='max-w-[280px] w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto'>              
                 

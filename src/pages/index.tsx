@@ -1,158 +1,125 @@
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import HeroSection from "../components/HeroSection";
+import Section from "../components/Section";
 import Link from "next/link";
 import Image from "next/image";
 import Depoimentos from "../components/Depoimentos";
 import Head from "next/head";
+import Subtitle from "../components/Subtitle";
+import Cards from "../components/Cards";
+import Container from "../components/Container";
 
 export default function Home() {
+  
+  
   return (
-    <>  <Head>
-          <title>Mariane Barbosa - Psicóloga Clínica - Atendimento Online</title>
-        </Head>
-        <Nav />
-        <HeroSection>
-          <div className="
-          flex flex-col px-4 pt-8 lg:pr-[20%] font-inter
-          transform transition-all ease-out max-w-[1360px] mx-auto
-          "
-          >
-            <h2 className="text-whiteColor uppercase text-sm font-bold mb-4">Psicóloga Clínica Mariane Barbosa</h2>
-            <h1 className="text-whiteColor text-3xl md:text-5xl lg:text-6xl font-bold mt-3 mb-8"><span className="text-secondaryColor-700 block mb-4">Psicoterapia online</span> Atendimento individual</h1>
-            <p className="text-whiteColor mb-12">Um trabalho de aprofundamento pessoal, que possibilita à pessoa a descoberta, reavaliação e trabalho sobre suas crenças e perspectivas da vida, fazendo com que ela se torne mais consciente das suas possibilidades e potencialidades.</p>
-            <Link href='/'>
-              <a className={`
-              text-whiteColor bg-secondaryColor-700 py-2 px-10 text-lg md:text-xl rounded-full max-w-max text-center transition-all duration-300 hover:scale-105
-              `}>Vamos Conversar?</a>
-            </Link>
-          </div>          
-        </HeroSection>
+    <>
+      <Head>
+        <title>Mariane Barbosa - Psicóloga Clínica - Atendimento Online</title>
+        <meta name="description" content="Atendimento Online e Individual. Psicoterapia com Mariane Barbosa" />
+      </Head>
+      <Nav />
+      <Section 
+      bgSection="bg-hero" 
+      bgPosition="bg-center">
+        <div className="
+        flex flex-col px-4 pt-8 lg:pr-[20%] font-inter
+        transform transition-all ease-out max-w-[1360px] mx-auto
+        "
+        >
+          <Subtitle textColor="white" content="Psicóloga Clínica Mariane Barbosa" />
+          <h1 className="text-whiteColor text-3xl md:text-5xl lg:text-6xl font-bold mt-3 mb-8"><span className="text-secondaryColor-700 block mb-4">Psicoterapia online</span> Atendimento individual</h1>
+          <p className="text-whiteColor mb-12">Um trabalho de aprofundamento pessoal, que possibilita à pessoa a descoberta, reavaliação e trabalho sobre suas crenças e perspectivas da vida, fazendo com que ela se torne mais consciente das suas possibilidades e potencialidades.</p>
+          <Link href='/'>
+            <a className={`
+            text-whiteColor bg-secondaryColor-700 py-2 px-10 text-lg md:text-xl rounded-full max-w-max text-center transition-all duration-300 hover:scale-105
+            `}>Vamos Conversar?</a>
+          </Link>
+        </div>          
+      </Section>
 
-        <section id="" className={`flex items-center bg-flower-light bg-no-repeat bg-auto bg-right-top w-full`}>
-          <div className={`bg-whiteColor bg-opacity-80 w-full`}>
-            <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">
-              <div className={`lg:pr-[50%]`}>
-                <h2 className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">Qualidade de vida</h2>
-                <h1 className="text-darkColor-900 text-3xl md:text-5xl font-bold mt-3 mb-8">Por que fazer <span className="text-secondaryColor-700">terapia?</span></h1>
-                <p className='text-darkColor-100'>Antes de tudo, psicoterapia não é sinônimo de doença. A psicoterapia serve para superar dificuldades que a vida nos apresenta e ajudar na prevenção de transtornos psicológicos que dificultam o convívio em sociedade.</p>
-              </div>
+      <Section 
+      bgSection="bg-flower-light" 
+      bgPosition="bg-right-top" 
+      bgSize="bg-contain"
+      >
+        <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">          
+          <div className={`lg:pr-[50%]`}>
+            <Subtitle textColor="secondary" content="Qualidade de vida" />
+            <h2 className="text-darkColor-900 text-3xl md:text-5xl font-bold mt-3 mb-8">Por que fazer <span className="text-secondaryColor-700">terapia?</span></h2>
+            <p className='text-darkColor-100'>Antes de tudo, psicoterapia não é sinônimo de doença. A psicoterapia serve para superar dificuldades que a vida nos apresenta e ajudar na prevenção de transtornos psicológicos que dificultam o convívio em sociedade.</p>
+          </div>
+          <div className={`mt-16 grid md:grid-cols-2 gap-6`}>
+            <Cards />
+            <Link href='/#faq'>
+            <a className="text-secondaryColor-700 font-bold text-xl">Está com dúvidas?</a></Link>
+          </div>
+        </div>
+      </Section>
 
-              <div className={`mt-16 grid md:grid-cols-2 gap-6`}>
-
-                <article className="bg-accentColor-700 bg-opacity-95 rounded-3xl py-9 px-7 flex gap-3">
-                  <div className={``}> 
-                    <Image src='/icons/autoestima.png' alt="autoestima" width={78} height={78}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2 w-full">
-                    <h3 className="font-bold text-whiteColor">Autoestima</h3>
-                    <p className="text-whiteColor text-sm">Com a terapia, é possível desenvolver ou aprimorar habilidades de enfrentamento, tendo em mente que sempre é possível ressignificar eventos que repercutem em nossa autoestima.</p>
-                  </div>
-                </article>
-
-                <article className="bg-accentColor-700 bg-opacity-95 rounded-3xl py-9 px-7 flex gap-3">
-                  <div className={``}> 
-                    <Image src='/icons/autocontrole.png' alt="Autocontrole" width={78} height={78}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2 w-full">
-                    <h3 className="font-bold text-whiteColor">Autocontrole</h3>
-                    <p className="text-whiteColor text-sm">Um dos pilares da psicoterapia é orientar a pessoa para que ela possa adquirir o verdadeiro autocontrole. Conseguir direcionar plenamente o próprio comportamento, os pensamentos e as emoções.</p>
-                  </div>
-                </article>
-
-                <article className="bg-accentColor-700 bg-opacity-95 rounded-3xl py-9 px-7 flex gap-3">
-                  <div className={``}> 
-                    <Image src='/icons/autoconfianca.png' alt="Autoconfiança" width={78} height={78}/>
-                  </div>
-                  <div className="flex flex-col gap-2 w-full">
-                    <h3 className="font-bold text-whiteColor">Autoconfiança</h3>
-                    <p className="text-whiteColor text-sm">A autoconfiança é uma qualidade que pode ser desenvolvida e trabalhada em qualquer momento da vida. Quem possui autoconfiança acredita em si mesmo, mostra-se firme, fala com propriedade e conquista maior autonomia.</p>
-                  </div>
-                </article>
-
-                <article className="bg-accentColor-700 bg-opacity-95 rounded-3xl py-9 px-7 flex gap-3">
-                  <div className={``}> 
-                    <Image src='/icons/amorproprio.png' alt="Amor Próprio" width={78} height={78}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2 w-full">
-                    <h3 className="font-bold text-whiteColor">Amor Próprio</h3>
-                    <p className="text-whiteColor text-sm">Amor próprio é a aceitação de que você se ama e se cuida o suficiente e o reconhecimento do seu valor pessoal para tornar isso uma prioridade em sua vida.</p>
-                  </div>
-                </article>
-
-                <Link href='/#faq'>
-                <a className="text-secondaryColor-700 font-bold text-xl">Está com dúvidas?</a></Link>
-              </div>
-            </div>          
+      <Section 
+      bgSection="bg-pattern-bals"       
+      bgPosition="bg-center" 
+      bgSize="bg-contain"
+      bgRepeat
+      bgFixed
+      >
+        <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
+          <div className="lg:w-3/4 mx-auto flex flex-col gap-8">
+            <h2 className="text-darkColor-900 text-3xl md:text-5xl text-center font-bold">Terapia <span className="text-secondaryColor-700">Online</span></h2>
+            <p className="text-darkColor-100 text-lg md:text-xl text-center">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
+            <p className="text-darkColor-100 text-sm text-center">Existem muitas plataformas seguras para que você possa realizar o seu atendimento online de uma maneira ética e confiável.</p>
           </div>
 
-        </section>
-
-        <section className="flex items-center bg-pattern-bals bg-repeat bg-contain bg-center bg-fixed w-full">
-          <div className="bg-whiteColor bg-opacity-95 w-full">       
-            <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
-              <div className="lg:w-3/4 mx-auto flex flex-col gap-8">
-                <h2 className="text-darkColor-900 text-3xl md:text-5xl text-center font-bold">Terapia <span className="text-secondaryColor-700">Online</span></h2>
-                <p className="text-darkColor-100 text-lg md:text-xl text-center">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
-                <p className="text-darkColor-100 text-sm text-center">Existem muitas plataformas seguras para que você possa realizar o seu atendimento online de uma maneira ética e confiável.</p>
-              </div>
-
-              <div className="flex flex-wrap gap-4 justify-around lg:w-3/4 mx-auto">
-                <span><span className="text-secondaryColor-700 font-bold">✓</span> Relacionamento</span>
-                <span><span className="text-secondaryColor-700 font-bold">✓</span> Autoestima</span>
-                <span><span className="text-secondaryColor-700 font-bold">✓</span> Ansiedade</span>
-                <span><span className="text-secondaryColor-700 font-bold">✓</span> Depressão</span>
-              </div>
-
-              <div className="flex justify-center mt-4">
-                <Link href="/#contato">
-                <a className="text-center border-2 border-accentColor-700 rounded-full px-10 py-2 text-accentColor-700 font-bold text-lg md:text-xl transition-all duration-300 hover:border-secondaryColor-700 hover:bg-secondaryColor-700 hover:text-whiteColor">Agende sua Consulta</a>
-                </Link>              
-              </div>
-            </div>
+          <div className="flex flex-wrap gap-4 justify-around lg:w-3/4 mx-auto">
+            <span><span className="text-secondaryColor-700 font-bold">✓</span> Relacionamento</span>
+            <span><span className="text-secondaryColor-700 font-bold">✓</span> Autoestima</span>
+            <span><span className="text-secondaryColor-700 font-bold">✓</span> Ansiedade</span>
+            <span><span className="text-secondaryColor-700 font-bold">✓</span> Depressão</span>
           </div>
 
-        </section>
+          <div className="flex justify-center mt-4">
+            <Link href="/#contato">
+            <a className="text-center border-2 border-accentColor-700 rounded-full px-10 py-2 text-accentColor-700 font-bold text-lg md:text-xl transition-all duration-300 hover:border-secondaryColor-700 hover:bg-secondaryColor-700 hover:text-whiteColor">Agende sua Consulta</a>
+            </Link>              
+          </div>
+        </div>
+      </Section>
 
-        <section id="sobre-mim" className="flex items-center w-full bg-gradient-to-b from-accentColor-700 to-accentColor-900">
-          <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">
-            <div className="grid md:grid-cols-2 bg-flower-light-reverse bg-no-repeat bg-bottom bg-contain">
-              <div className='columns-1 flex md:justify-end md:p-3'>
-                <div>
-                  <div className="shadow-[#F29799] shadow-img rounded-[40px] flex">
-                    <Image
-                    src='/images/mariane-barbosa.jpg'
-                    alt="Mariane Barbosa"          
-                    width={486}
-                    height={475}
-                    className={`rounded-[40px]`}
-                    />
-                  </div>
+      <Section id="sobre-mim" bgSection="darkGradient" bgPosition="bg-center">
+        <Container>
+          <div className="grid md:grid-cols-2 bg-flower-light-reverse bg-no-repeat bg-bottom bg-contain">
+            <div className='columns-1 flex md:justify-end md:p-3'>
+              <div>
+                <div className="shadow-[#F29799] shadow-img rounded-[40px] flex">
+                  <Image
+                  src='/images/mariane-barbosa.jpg'
+                  alt="Mariane Barbosa"          
+                  width={486}
+                  height={475}
+                  className={`rounded-[40px]`}
+                  />
                 </div>
               </div>
-              <div className="columns-1 flex flex-col mt-5 md:mt-0 md:p-3 text-whiteColor text-base font-light">
-                <span className="text-secondaryColor-700 uppercase text-sm font-bold mt-4 md:mt-0 mb-2">PSICÓLOGA CLÍNICA - CRP 06/17024</span>
-                <h1 className="font-bold text-3xl md:text-4xl mb-6">Mariane Barbosa</h1>
-                <p className="opacity-75 mb-4">Como psicóloga clínica atuo para que cada indivíduo encontre sua própria verdade. Acredito que cada pessoa seja única e mereça ser respeitada, acredito no poder do ser humano para superar seus obstáculos e isso me motiva bastante!</p>
-                <p className="opacity-75 mb-4">Acredito muito na interdisciplinaridade e nas parcerias profissionais e estou sempre buscando conhecimentos novos, ampliando a possibilidade de entregar o melhor para todos os meus pacientes.</p>
-                <p className="opacity-75 mb-4">Meu objetivo é criar um espaço acolhedor, onde a pessoa se sinta respeitada em suas individualidades, num lugar em que possa fazer uso de sua verdadeira história para construir soluções reais diante dos problemas.</p>
-                <p className="opacity-75 mb-4">Para ser feliz, é necessário ouvir as vozes interiores e reconhecer-se como alguém importante e merecedor do seu amor.</p>
-              </div>
             </div>
-            
-              <Depoimentos />
-          </div>
-
-        </section>
-
+            <div className="columns-1 flex flex-col mt-5 md:mt-0 md:p-3 text-whiteColor text-base font-light">
+              <Subtitle textColor="secondary" content="PSICÓLOGA CLÍNICA - CRP 06/17024" />
+              <h1 className="font-bold text-3xl md:text-4xl mb-6">Mariane Barbosa</h1>
+              <p className="opacity-75 mb-4">Como psicóloga clínica atuo para que cada indivíduo encontre sua própria verdade. Acredito que cada pessoa seja única e mereça ser respeitada, acredito no poder do ser humano para superar seus obstáculos e isso me motiva bastante!</p>
+              <p className="opacity-75 mb-4">Acredito muito na interdisciplinaridade e nas parcerias profissionais e estou sempre buscando conhecimentos novos, ampliando a possibilidade de entregar o melhor para todos os meus pacientes.</p>
+              <p className="opacity-75 mb-4">Meu objetivo é criar um espaço acolhedor, onde a pessoa se sinta respeitada em suas individualidades, num lugar em que possa fazer uso de sua verdadeira história para construir soluções reais diante dos problemas.</p>
+              <p className="opacity-75 mb-4">Para ser feliz, é necessário ouvir as vozes interiores e reconhecer-se como alguém importante e merecedor do seu amor.</p>
+            </div>
+          </div>        
+          <Depoimentos />
+        </Container>
+      </Section>
+          
         <section id="faq" className="flex items-center bg-pattern-bals bg-repeat bg-fixed bg-contain bg-center w-full">
           <div className="bg-whiteColor bg-opacity-95 w-full">       
             <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
               <div className="flex flex-col items-center md:w-3/4 mx-auto">
-                <span className="text-secondaryColor-700 uppercase text-sm font-bold mb-4">PERGUNTAS  FREQUENTES</span>
+                <Subtitle textColor="secondary" content="PERGUNTAS FREQUENTES" />
                 <h1 className="font-bold text-4xl md:text-6xl mb-6">FAQ</h1>
                 <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
                   <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">QUAL ABORDAGEM É UTILIZADA NAS SESSÕES?</summary>
@@ -189,13 +156,27 @@ export default function Home() {
           <div className="w-full">       
             <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
               <div className="flex flex-col gap-3">
-                <span className="text-secondaryColor-700 uppercase text-sm font-bold">POSTAGENS RECENTES</span>
-                <h1 className="font-bold text-4xl md:text-6xl mb-6 uppercase">Blog</h1>
+                <Subtitle textColor="secondary" content="POSTAGENS RECENTES" />
+                <h2 className="font-bold text-4xl md:text-6xl mb-6 uppercase">Blog</h2>
                 <p className="text-darkColor-100 md:w-2/4">Escrevo textos sobre autoestima, autoconhecimento e liberdade emocional para ajudar pessoas levando informações certas que contribuem para o bem-estar do leitor.</p>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-
+                {/* {
+                  data.map(v => {
+                    return (
+                      <article key={v.id}>
+                        <div>
+                          imagem
+                        </div>
+                        <div>
+                          <h4>{v.title.rendered}</h4>
+                          <p>{v.excerpt}</p>
+                        </div>
+                      </article>
+                    )
+                  })  
+                } */}
                 <article className="cursor-pointer relative">
                   <div className="w-full relative">
                     <Image src='/images/4-tecnicas-que-ajudam-a-controlar-a-ansiedade.jpg' layout="responsive" width={384} height={214} alt='blog' />
@@ -235,3 +216,13 @@ export default function Home() {
     </>
   )
 }
+
+// export async function getStaticProps() {
+//   const { data } = await axios.get(`${process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL}/wp-json/wp/v2/posts`)
+//   return {
+//     props: {
+//       data: data || {},
+//     },
+//     revalidate: 1,
+//   }
+// }

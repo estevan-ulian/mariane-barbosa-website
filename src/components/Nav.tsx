@@ -24,7 +24,7 @@ const Nav = () => {
 
   return (
     <div className={`
-    px-4 lg:flex items-center max-w-[1360px] mx-auto
+    px-4 lg:flex items-center max-w-[1360px] mx-auto mb-[-80px]
     `}>
 
         <nav className={`
