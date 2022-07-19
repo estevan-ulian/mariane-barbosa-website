@@ -43,7 +43,7 @@ const Nav = ({ bg } : NavProps) => {
                     alt='Logo Mariane Barbosa'
                     width={260}
                     height={48}
-                    className='cursor-pointer'
+                    className='cursor-pointer hover:animate-pulse'
                 />
                 </Link>
             </div>
@@ -72,7 +72,7 @@ const Nav = ({ bg } : NavProps) => {
                         return (
                             <li key={i} className={`lg:flex lg:items-center lg:justify-center`}>                                
                                     <a href={Link.url} className={`
-                                    text-whiteColor cursor-pointer lg:opacity-50
+                                    text-lightColor cursor-pointer lg:text-lightColor
                                     text-xl py-1 
                                     lg:text-base lg:my-0 lg:py-3
                                     transition-all duration-400
@@ -92,8 +92,8 @@ const Nav = ({ bg } : NavProps) => {
                 <Button className="">
                     <Link href="/">
                         <a className={`
-                        border rounded-full border-whiteColor px-10 py-4 lg:py-2 text-whiteColor text-2xl lg:text-base
-                        transition-all duration-300 hover:bg-secondaryColor-700
+                        border rounded-full border-lightColor px-10 py-4 lg:py-2 text-lightColor text-2xl lg:text-base
+                        transition-all duration-300 lg:hover:bg-secondaryColor-700 lg:hover:border-secondaryColor-700
                         `}
                         >Fale comigo!</a>
                     </Link>
