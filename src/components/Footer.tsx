@@ -16,25 +16,25 @@ export default function Footer() {
                         <div className="sm:w-1/2 lg:w-1/4">
                             <h4 className="text-whiteColor font-bold mb-2">Menu</h4>
                             <ul>
-                                <li><Link href=""><a className="text-lightColor text-sm">Sobre Mim</a></Link></li>
-                                <li><Link href=""><a className="text-lightColor text-sm">Depoimentos</a></Link></li>
-                                <li><Link href=""><a className="text-lightColor text-sm">Blog da Mari</a></Link></li>
+                                <li><Link href="/#sobre-mim"><a className="text-lightColor text-sm">Sobre Mim</a></Link></li>
+                                <li><Link href="/#depoimentos"><a className="text-lightColor text-sm">Depoimentos</a></Link></li>
+                                <li><Link href="/blog"><a className="text-lightColor text-sm">Blog da Mari</a></Link></li>
                             </ul>
                         </div>
                         
                         <div className="sm:w-1/2 lg:w-1/4">
                             <h4 className="text-whiteColor font-bold mb-2">Línks Úteis</h4>
                             <ul>
-                                <li><Link href=""><a className="text-lightColor text-sm">Perguntas Frequentes</a></Link></li>
-                                <li><Link href=""><a className="text-lightColor text-sm">Política de Privacidade</a></Link></li>
+                                <li><Link href="/#faq"><a className="text-lightColor text-sm">Perguntas Frequentes</a></Link></li>
+                                <li><Link href="/politica-de-privacidade"><a className="text-lightColor text-sm">Política de Privacidade</a></Link></li>
                             </ul>
                         </div>
 
                         <div className="sm:w-1/2 lg:w-1/4">
                             <h4 className="text-whiteColor font-bold mb-2">Informações de contato</h4>
                             <ul>
-                                <li><Link href=""><a className="text-lightColor text-sm flex items-center gap-2"><BsWhatsapp className="text-secondaryColor-700" /> (17) 91111-1111</a></Link></li>
-                                <li><Link href=""><a className="text-lightColor text-sm flex items-center gap-2 "><AiOutlineMail className="text-secondaryColor-700" /> contato@marianebarbosa.com.br</a></Link></li>
+                                <li><Link href="/#"><a className="text-lightColor text-sm flex items-center gap-2"><BsWhatsapp className="text-secondaryColor-700" /> (17) 91111-1111</a></Link></li>
+                                <li><Link href="mailto:contato@marianebarbosa.com.br"><a className="text-lightColor text-sm flex items-center gap-2 "><AiOutlineMail className="text-secondaryColor-700" /> contato@marianebarbosa.com.br</a></Link></li>
                             </ul>
                         </div>
 

@@ -5,7 +5,11 @@ import Button from './Button'
 import LogoLight from '../../public/images/logo-mariane-barbosa.png'
 import Link from 'next/link';
 
-const Nav = () => {
+interface NavProps {
+    bg?: 'transparent' | 'accentColor-700'
+}
+
+const Nav = ({ bg } : NavProps) => {
     const [open, setOpen] = useState(false);
 
     useEffect(() => {
@@ -24,7 +28,7 @@ const Nav = () => {
 
   return (
     <div className={`
-    px-4 lg:flex items-center max-w-[1360px] mx-auto mb-[-80px]
+    px-4 lg:flex items-center max-w-[1360px] mx-auto mb-[-80px] bg-${bg}
     `}>
 
         <nav className={`
