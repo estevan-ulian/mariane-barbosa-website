@@ -234,6 +234,7 @@ export async function getStaticProps() {
   })
   
   return {
-    props: { data }
+    props: { data },
+    revalidate: 10
   }
 }

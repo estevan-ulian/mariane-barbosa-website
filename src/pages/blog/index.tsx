@@ -13,7 +13,7 @@ export default function Blog ({ data: { posts } }) {
   function renderPost() {
     return posts.map(post => {
       const { id, title, slug, coverImage, excerpt, date } = post
-      const excerpt125words = excerpt.slice(0, 125)
+      const excerpt125char = excerpt.slice(0, 125)
 
       const fallbackImage = !coverImage?.url ? "images/mariane-barbosa.jpg" : coverImage?.url
   
@@ -25,10 +25,10 @@ export default function Blog ({ data: { posts } }) {
                 <Image loader={() => fallbackImage} src={fallbackImage} alt={title} width={768} height={360} className={`rounded-t-2xl`} />
               </div>
               <div className="flex flex-col p-3 border-l border-b border-r border-accentColor-700 rounded-b-2xl border-opacity-10">
-                <span className='text-sm text-darkColor-100'>{date}</span>
+                <span className='text-sm text-darkColor-100 opacity-50 self-end'>{date}</span>
                 <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3" dangerouslySetInnerHTML={ { __html: title}} />
                 <div className="text-darkColor-100">
-                  {excerpt125words}
+                  {excerpt125char} ...
                 </div>
               </div> 
             </a>
@@ -41,7 +41,7 @@ export default function Blog ({ data: { posts } }) {
   return (
     <div className={``}>
       <Head>
-        <title>Blog da Mari - Mariane Barbosa</title>
+        <title>Blog - Mariane Barbosa</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Nav bg="accentColor-700" />
