@@ -13,14 +13,14 @@ export default function Post({ data: { post } }) {
     <Nav bg="accentColor-700"/>
     <Section height="py" >
       <Container>
-        <div className="flex flex-col text-darkColor-900 mx-auto sm:w-3/4 md:w-2/3">
+        <div className="flex flex-col text-darkColor-900 font-inter mx-auto sm:w-3/4 md:w-2/3">
           <span className="self-center font-light">{date}</span>
           <h1 className="text-center text-3xl md:text-5xl lg:text-6xl font-bold mt-3 mb-8">{title}</h1>
           <p className="mb-10 text-lg text-center font-light">{excerpt}</p>
 
         </div>
           <div className="self-center">
-            <div className="w-2/4 mx-auto mb-12">
+            <div className="sm:w-3/4 md:w-2/4 mx-auto mb-12">
               <Image 
                 loader={() => coverImage.url} 
                 src={coverImage.url} 

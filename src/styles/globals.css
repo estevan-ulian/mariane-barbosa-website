@@ -40,13 +40,13 @@ html, body {
 }
 
 .postcontent h2{
-    @apply text-2xl mt-4 mb-2
+    @apply text-2xl mt-4 mb-2 font-bold
 }
 
 .postcontent h3{
-    @apply text-xl mt-4 mb-2
+    @apply text-xl mt-4 mb-2 font-medium
 }
 
 .postcontent h4{
-    @apply text-lg mt-4 mb-2
+    @apply text-lg mt-4 mb-2 font-medium
 }
