@@ -24,7 +24,7 @@ function renderPost() {
         <Link href={`/blog/${slug}`}>
           <a>
             <div className="w-full relative">
-              <Image loader={() => coverImage.url} src={coverImage.url} alt={title} width={768} height={360} className={`rounded-t-2xl`} />
+              <Image unoptimized loader={() => coverImage.url} src={coverImage.url} alt={title} width={768} height={360} className={`rounded-t-2xl`} />
             </div>
             <div className="p-3 border-l border-b border-r border-accentColor-700 rounded-b-2xl border-opacity-10">
               <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3" dangerouslySetInnerHTML={ { __html: title}} />
