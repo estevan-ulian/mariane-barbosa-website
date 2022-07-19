@@ -1,26 +1,14 @@
+import { ApolloProvider } from '@apollo/client';
 import { AppProps } from 'next/app'
-import { useEffect, useState } from 'react';
+import client from '../lib/apolloClient';
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
-
-  const [showChild, setShowChild] = useState(false);
-  useEffect(() => {
-    setShowChild(true);
-  }, []);
-
-  if (!showChild) {
-    return null;
+    return (
+    <ApolloProvider client={client}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+    )
   }
-
-  if (typeof window === 'undefined') {
-    return <></>;
-
-  } else {
-
-    return <Component {...pageProps} />
-
-  }
-}
 
 export default MyApp

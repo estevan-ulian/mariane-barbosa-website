@@ -8,25 +8,23 @@ import Head from "next/head";
 import Subtitle from "../components/Subtitle";
 import Cards from "../components/Cards";
 import Container from "../components/Container";
-import { getAllPosts, getAllPostsForHome } from "../lib/api";
+import { gql } from "@apollo/client";
+import client from "../lib/apolloClient";
 
-export default function Home({ allPosts: { edges } }) {
-  const posts = edges.slice(0, 3)
+export default function Home({ data: { posts } }) {
   
 function renderPost() {
-  return posts.map(post => {
-    const { id, title, slug, featuredImage, excerpt, date } = post.node
+  const firstThreePosts = posts.slice(0, 3)
+  return firstThreePosts.map(post => {
+    const { id, title, slug, coverImage, excerpt } = post
     const excerpt125words = excerpt.slice(0, 125)
-
-    const { altText, sourceUrl } = featuredImage.node
-
 
     return (
       <article key={id} className={`w-full relative`}>
-        <Link href={`/${slug}`}>
+        <Link href={`/blog/${slug}`}>
           <a>
             <div className="w-full relative">
-              <Image loader={() => sourceUrl} src={sourceUrl} alt={altText} width={768} height={360} />
+              <Image loader={() => coverImage.url} src={coverImage.url} alt={title} width={768} height={360} className={`rounded-t-2xl`} />
             </div>
             <div className="p-3 border-l border-b border-r border-accentColor-700 rounded-b-2xl border-opacity-10">
               <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3" dangerouslySetInnerHTML={ { __html: title}} />
@@ -183,27 +181,26 @@ function renderPost() {
       </Section>
 
       <Section id="blog" height="py" bgSection="bg-whiteColor" bgPosition="bg-center">
-      <Container>      
-          <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
-            <div className="flex flex-col gap-3">
-              <Subtitle textColor="secondary" content="POSTAGENS RECENTES" />
-              <h2 className="font-bold text-4xl md:text-6xl mb-6 uppercase">Blog</h2>
-              <p className="text-darkColor-100 md:w-2/4">Escrevo textos sobre autoestima, autoconhecimento e liberdade emocional para ajudar pessoas levando informações certas que contribuem para o bem-estar do leitor.</p>
-            </div>
+        <Container>   
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-
-            {renderPost()}
-
-            </div>
-            <div className="flex justify-center mt-4">
-              <Link href='/blog'>
-                <a className={`
-                text-whiteColor uppercase bg-secondaryColor-700 py-2 px-10 text-base md:text-xl rounded-full max-w-max text-center transition-all duration-300 hover:scale-105
-                `}>Blog da Mari</a>
-              </Link>            
-            </div>               
+          <div className="flex flex-col">
+            <Subtitle textColor="secondary" content="POSTAGENS RECENTES" />
+            <h2 className="font-bold text-4xl md:text-6xl mb-6 uppercase">Blog</h2>
+            <p className="text-darkColor-100 md:w-1/2">Escrevo textos sobre autoestima, autoconhecimento e liberdade emocional para ajudar pessoas levando informações certas que contribuem para o bem-estar do leitor.</p>
           </div>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
+            {renderPost()}
+          </div>
+
+          <div className="flex justify-center mt-12">
+            <Link href='/blog'>
+              <a className={`
+              text-whiteColor uppercase bg-secondaryColor-700 py-2 px-10 text-base md:text-xl rounded-full max-w-max text-center transition-all duration-300 hover:scale-105
+              `}>Blog da Mari</a>
+            </Link>            
+          </div>   
+
         </Container>
       </Section>
 
@@ -213,11 +210,30 @@ function renderPost() {
 }
 
 export async function getStaticProps() {
-  const allPosts = await getAllPosts()
+  const { data } = await client.query({
+    query: gql`
+      query allPosts {
+        posts(first: 10000, orderBy: date_DESC, stage: PUBLISHED) {
+          excerpt
+          id
+          slug
+          title
+          stage
+          coverImage {
+            id
+            url
+            width
+            height
+          }
+          content {
+            html
+          }
+        }
+      }            
+    `
+  })
   
-
   return {
-    props: { allPosts},
-    revalidate: 10
+    props: { data }
   }
 }
