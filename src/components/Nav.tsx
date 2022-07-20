@@ -4,31 +4,43 @@ import { CloseIcon, MenuIcon } from './Icons'
 import Button from './Button'
 import LogoLight from '../../public/images/logo-mariane-barbosa.png'
 import Link from 'next/link';
+import { Links, WhatsAppUrl } from '../data/links';
 
 interface NavProps {
-    bg?: 'transparent' | 'accentColor-700'
+    bg?: 'transparent' | 'accentColor-900'
 }
 
 const Nav = ({ bg } : NavProps) => {
     const [open, setOpen] = useState(false);
+    const [stickyNav, setStickyNav] = useState(false)   
 
     useEffect(() => {
-        open && (document.body.style.overflow = 'hidden')
-        !open && (document.body.style.overflow = 'unset')
+        open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
+
+        function handleScroll() {
+            if(window.pageYOffset > 80) {
+                setStickyNav(true)
+            } else {
+                setStickyNav(false)
+            }
+        }
+
+        function watchScroll() {
+            window.addEventListener("scroll", handleScroll);
+          }
+          watchScroll();
+          return () => {
+            window.removeEventListener("scroll", handleScroll);
+          };
     }, [open])
 
-    const Links = [
-        {name: 'Sobre Mim', url: '/#sobre-mim'},
-        {name: 'Blog da Mari', url: '/blog'},
-        {name: 'Depoimentos', url: '/#depoimentos'},
-        {name: 'FAQ', url: '/#faq'},
-        {name: 'Quer Ajuda?', url: '/#contato'},
-    ]
+    
     
 
   return (
     <div className={`
     px-4 lg:flex items-center max-w-[1360px] mx-auto mb-[-80px] bg-${bg}
+    ${stickyNav ? 'transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 bg-accentColor-900 bg-opacity-95 z-50 drop-shadow-md' : ''}
     `}>
 
         <nav className={`
@@ -36,8 +48,8 @@ const Nav = ({ bg } : NavProps) => {
         `
         }>
 
-            <div className='w-4/5 lg:w-1/5'>
-                <Link href="/">            
+            <div className={`w-4/5 lg:w-1/5`}>
+                <Link href='/'>            
                     <Image 
                     src={LogoLight} 
                     alt='Logo Mariane Barbosa'
@@ -87,18 +99,9 @@ const Nav = ({ bg } : NavProps) => {
                             )
                         }
                     )
-                }
-            
-                <Button className="">
-                    <Link href="/">
-                        <a className={`
-                        border rounded-full border-lightColor px-10 py-4 lg:py-2 text-lightColor text-2xl lg:text-base
-                        transition-all duration-300 lg:hover:bg-secondaryColor-700 lg:hover:border-secondaryColor-700
-                        `}
-                        >Fale comigo!</a>
-                    </Link>
-                </Button>
-            </ul>
+                } 
+                <Button variation='bgTransparent' content='Fale Comigo' url={WhatsAppUrl} />                    
+            </ul> 
 
         </nav>
 

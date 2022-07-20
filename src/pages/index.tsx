@@ -1,21 +1,24 @@
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
-import Section from "../components/Section";
+import { gql } from "@apollo/client";
+import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import Depoimentos from "../components/Depoimentos";
-import Head from "next/head";
+import client from "../lib/apolloClient";
+import Nav from "../components/Nav";
+import Section from "../components/Section";
+import Container from "../components/Container";
 import Subtitle from "../components/Subtitle";
 import Cards from "../components/Cards";
-import Container from "../components/Container";
-import { gql } from "@apollo/client";
-import client from "../lib/apolloClient";
+import Depoimentos from "../components/Depoimentos";
+import Faq from "../components/Faq";
+import Footer from "../components/Footer";
+import { WhatsAppUrl } from "../data/links";
+import TextContrast from "../components/TextContrast";
+import Button from "../components/Button";
 
 export default function Home({ data: { posts } }) {
-  
+
 function renderPost() {
-  const firstThreePosts = posts.slice(0, 3)
-  return firstThreePosts.map(post => {
+  return posts.map(post => {
     const { id, title, slug, coverImage, excerpt } = post
     const excerpt125words = excerpt.slice(0, 125)
 
@@ -37,7 +40,6 @@ function renderPost() {
   })
 }
 
-
   return (
     <>
       <Head>
@@ -48,19 +50,17 @@ function renderPost() {
       <Nav />
 
       <Section 
+      id="hero"
       height="full"
       bgSection="bg-hero" 
       bgPosition="bg-center">
         <Container margin="mt-[40px]">
           <Subtitle textColor="white" content="Psicóloga Clínica Mariane Barbosa" />
-          <h1 className="text-whiteColor text-3xl md:text-5xl lg:text-6xl font-bold mt-3 mb-8"><span className="text-secondaryColor-700 block mb-4">Psicoterapia online</span> Atendimento individual</h1>
-          <p className="text-whiteColor mb-12">Um trabalho de aprofundamento pessoal, que possibilita à pessoa a descoberta, reavaliação e trabalho sobre suas crenças e perspectivas da vida, fazendo com que ela se torne mais consciente das suas possibilidades e potencialidades.</p>
-          <Link href='/'>
-            <a className={`
-            text-whiteColor bg-secondaryColor-700 py-2 px-10 text-lg md:text-xl rounded-full max-w-max text-center transition-all duration-300 hover:scale-105
-            `}>Vamos Conversar?</a>
-          </Link>
-        </Container>          
+          <h1 className="text-whiteColor text-3xl md:text-5xl lg:text-6xl font-bold mt-3 mb-8"><TextContrast block>Psicoterapia online</TextContrast> Atendimento individual</h1>
+          <p className="text-whiteColor mb-12 lg:pr-[50%]">Um trabalho de aprofundamento pessoal, que possibilita à pessoa a descoberta, reavaliação e trabalho sobre suas crenças e perspectivas da vida, fazendo com que ela se torne mais consciente das suas possibilidades e potencialidades.</p>
+          <Button big url={WhatsAppUrl} content="Vamos Conversar ?" variation="bgPink" />
+
+        </Container>
       </Section>
 
       <Section 
@@ -69,18 +69,16 @@ function renderPost() {
       bgPosition="bg-right-top" 
       bgSize="bg-contain"
       >
-        <div className="max-w-[1360px] mx-auto py-16 md:py-32 px-4">          
-          <div className={`lg:pr-[50%]`}>
+        <Container> 
             <Subtitle textColor="secondary" content="Qualidade de vida" />
             <h2 className="text-darkColor-900 text-3xl md:text-5xl font-bold mt-3 mb-8">Por que fazer <span className="text-secondaryColor-700">terapia?</span></h2>
-            <p className='text-darkColor-100'>Antes de tudo, psicoterapia não é sinônimo de doença. A psicoterapia serve para superar dificuldades que a vida nos apresenta e ajudar na prevenção de transtornos psicológicos que dificultam o convívio em sociedade.</p>
-          </div>
+            <p className='text-darkColor-100 lg:pr-[50%]'>Antes de tudo, psicoterapia não é sinônimo de doença. A psicoterapia serve para superar dificuldades que a vida nos apresenta e ajudar na prevenção de transtornos psicológicos que dificultam o convívio em sociedade.</p>
           <div className={`mt-16 grid md:grid-cols-2 gap-6`}>
             <Cards />
             <Link href='/#faq'>
             <a className="text-secondaryColor-700 font-bold text-xl">Está com dúvidas?</a></Link>
           </div>
-        </div>
+        </Container>
       </Section>
 
       <Section 
@@ -93,7 +91,7 @@ function renderPost() {
       >
         <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
           <div className="lg:w-3/4 mx-auto flex flex-col gap-8">
-            <h2 className="text-darkColor-900 text-3xl md:text-5xl text-center font-bold">Terapia <span className="text-secondaryColor-700">Online</span></h2>
+            <h2 className="text-darkColor-900 text-3xl md:text-5xl text-center font-bold">Terapia <TextContrast>Online</TextContrast></h2>
             <p className="text-darkColor-100 text-lg md:text-xl text-center">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
             <p className="text-darkColor-100 text-sm text-center">Existem muitas plataformas seguras para que você possa realizar o seu atendimento online de uma maneira ética e confiável.</p>
           </div>
@@ -106,7 +104,7 @@ function renderPost() {
           </div>
 
           <div className="flex justify-center mt-4">
-            <Link href="/#contato">
+            <Link href={WhatsAppUrl}>
             <a className="text-center border-2 border-accentColor-700 rounded-full px-10 py-2 text-accentColor-700 font-bold text-lg md:text-xl transition-all duration-300 hover:border-secondaryColor-700 hover:bg-secondaryColor-700 hover:text-whiteColor">Agende sua Consulta</a>
             </Link>              
           </div>
@@ -148,36 +146,13 @@ function renderPost() {
       bgSize="bg-contain"
       bgRepeat
       bgFixed>      
-            <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
+            <Container>            
               <div className="flex flex-col items-center w-full">
                 <Subtitle textColor="secondary" content="PERGUNTAS FREQUENTES" />
                 <h1 className="font-bold text-4xl md:text-6xl mb-6">FAQ</h1>
-                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
-                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">QUAL ABORDAGEM É UTILIZADA NAS SESSÕES?</summary>
-                  <p className="">Eu trabalho com a abordagem Terapia Cognitivo Comportamental, que visa o objetivo da mudança através de uma visão direcionada às ações que o paciente deseja tomar para resolver um problema. Além disso, a TCC tem base científicas comprovadas e permite que o paciente identifique padrões de pensamentos negativos entre outros processos adaptativos.</p>
-                </details>
-                <details className="min-w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
-                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">COMO FAÇO PARA AGENDAR UMA CONSULTA?</summary>
-                  <p>Agendar uma consulta é muito simples. Basta entrar em contato comigo clicando aqui que a gente combina o melhor horário da sua sessão.</p>
-                </details>
-                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
-                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">COMO DEVO AGIR DURANTE AS SESSÕES?</summary>
-                  <p>Eu recebo o paciente em um ambiente acolhedor, seguro e sigiloso, e vou conduzindo a conversa por meio de perguntas que permitem ao paciente expressar suas questões e inseguranças.</p>
-                </details>
-                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
-                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">QUANTO TEMPO DURA UMA SESSÃO E QUAL É A FREQUÊNCIA?</summary>
-                  <p>As sessões duram em média 50 minutos e são realizadas semanalmente.</p>
-                </details>
-                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
-                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">COMO FUNCIONA A TERAPIA ONLINE?</summary>
-                  <p>As terapias online acontecem no conforto da sua casa ou do local que você tenha preferência e disposição para realizar as sessões utilizando um aparelho celular ou computador conectado à internet. Pouco antes da sessão é enviado um link para realização da vídeo chamada.</p>
-                </details>
-                <details className="w-full py-4 bg-lightColor rounded-md px-4 mb-4 drop-shadow-md">
-                  <summary className="flex items-center font-bold uppercase cursor-pointer outline-none">QUAIS OS HORÁRIOS DE ATENDIMENTO?</summary>
-                  <p>Os atendimentos são feitos de segunda à sexta-feira das 14h às 20h. Minha agenda costuma estar equilibrada, mas consigo abrir exceções de horário.</p>
-                </details>
+                <Faq />
             </div>          
-          </div>
+          </Container>
       </Section>
 
       <Section id="blog" height="py" bgSection="bg-whiteColor" bgPosition="bg-center">
@@ -193,12 +168,8 @@ function renderPost() {
             {renderPost()}
           </div>
 
-          <div className="flex justify-center mt-12">
-            <Link href='/blog'>
-              <a className={`
-              text-whiteColor uppercase bg-secondaryColor-700 py-2 px-10 text-base md:text-xl rounded-full max-w-max text-center transition-all duration-300 hover:scale-105
-              `}>Blog da Mari</a>
-            </Link>            
+          <div className="flex justify-center mt-12">            
+            <Button big url="/blog" content="Blog da Mari" variation="bgPink" />            
           </div>   
 
         </Container>
@@ -213,20 +184,16 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query allPosts {
-        posts(first: 10000, orderBy: date_DESC, stage: PUBLISHED) {
-          excerpt
+        posts(first: 3, orderBy: date_DESC, stage: PUBLISHED) {
           id
+          excerpt
           slug
           title
           stage
           coverImage {
-            id
             url
             width
             height
-          }
-          content {
-            html
           }
         }
       }            

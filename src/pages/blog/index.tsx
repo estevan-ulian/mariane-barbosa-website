@@ -44,13 +44,13 @@ export default function Blog ({ data: { posts } }) {
         <title>Blog - Mariane Barbosa</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Nav bg="accentColor-700" />
+      <Nav bg="accentColor-900" />
   
       <Section height='py'>        
         <Container>
-          <div className='flex flex-col'>
-            <h1 className="text-darkColor-900 text-3xl md:text-5xl lg:text-6xl font-bold mt-3 mb-8">Blog da Mari</h1>
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8'>
+          <div className='flex flex-col py-5 md:py-0'>
+            <h1 className="text-darkColor-900 text-3xl md:text-5xl font-bold">Blog da Mari</h1>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16'>
               {renderPost()}
             </div>
 

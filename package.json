@@ -12,12 +12,14 @@
     "@apollo/client": "^3.6.9",
     "graphql": "^16.5.0",
     "next": "12.2.0",
+    "next-share": "^0.16.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "swiper": "^8.3.0"
   },
   "devDependencies": {
+    "@types/babel__core": "^7.1.19",
     "@types/node": "^18.0.3",
     "@types/react": "^18.0.15",
     "autoprefixer": "^10.4.7",
