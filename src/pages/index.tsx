@@ -11,39 +11,12 @@ import Cards from "../components/Cards";
 import Depoimentos from "../components/Depoimentos";
 import Faq from "../components/Faq";
 import Footer from "../components/Footer";
-import { WhatsAppUrl } from "../data/links";
+import { WhatsAppUrl } from "../data/constants";
 import TextContrast from "../components/TextContrast";
 import Button from "../components/Button";
+import PostGrid from "../components/PostGrid";
 
 export default function Home({ data: { posts } }) {
-
-function renderPost() {
-  return posts.map(post => {
-    const { id, title, slug, coverImage, excerpt } = post
-    const excerpt125words = excerpt.slice(0, 125)
-
-    return (
-      <article key={id} 
-      className={
-        `w-full relative 
-        transition-all duration-300 hover:scale-105
-      `}
-      >
-        <Link href={`/blog/${slug}`}>
-          <a>
-            <div className="w-full relative">
-              <Image unoptimized loader={() => coverImage.url} src={coverImage.url} alt={title} width={768} height={360} className={`rounded-t-2xl`} />
-            </div>
-            <div className="p-3 border-l border-b border-r border-accentColor-700 rounded-b-2xl border-opacity-10">
-              <h4 className="text-xl font-bold text-secondaryColor-700 mt-4 mb-3" dangerouslySetInnerHTML={ { __html: title}} />
-              <p className="text-darkColor-100" dangerouslySetInnerHTML={ { __html: excerpt125words + " ..."}} />
-            </div> 
-          </a>
-        </Link>
-      </article>
-    )
-  })
-}
 
   return (
     <>
@@ -168,13 +141,11 @@ function renderPost() {
 
           <div className="flex flex-col">
             <Subtitle textColor="secondary" content="POSTAGENS RECENTES" />
-            <h2 className="font-bold text-4xl md:text-6xl mb-6 uppercase">Blog</h2>
+            <h2 className="font-bold text-4xl md:text-6xl mb-6">Blog</h2>
             <p className="text-darkColor-100 md:w-1/2">Escrevo textos sobre autoestima, autoconhecimento e liberdade emocional para ajudar pessoas levando informações certas que contribuem para o bem-estar do leitor.</p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
-            {renderPost()}
-          </div>
+          <PostGrid posts={posts}/>
 
           <div className="flex justify-center mt-12">            
             <Button big url="/blog" content="Blog da Mari" variation="bgPink" />            
@@ -198,6 +169,7 @@ export async function getStaticProps() {
           slug
           title
           stage
+          date
           coverImage {
             url
             width

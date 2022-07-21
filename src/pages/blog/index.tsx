@@ -5,7 +5,9 @@ import Link from 'next/link';
 import Container from '../../components/Container';
 import Footer from '../../components/Footer';
 import Nav from '../../components/Nav';
+import PostGrid from '../../components/PostGrid';
 import Section from '../../components/Section';
+import { getAllPostsForBlog } from '../../data/constants';
 import client from '../../lib/apolloClient';
 
 export default function Blog ({ data: { posts } }) {
@@ -46,31 +48,6 @@ export default function Blog ({ data: { posts } }) {
     )
   }
 
-  function renderMorePosts() {
-    return morePosts.map(post => {
-      const { id, title, slug, coverImage, excerpt, date } = post      
-      const excerpt125char = excerpt.slice(0, 125)
-      const fallbackImage = !coverImage?.url ? "images/mariane-barbosa.jpg" : coverImage?.url
-  
-      return (
-        <article key={id} className={`w-full relative transition-all duration-300 hover:scale-105`}>
-          <Link href={`/blog/${slug}`}>
-            <a>
-              <div className="w-full relative">
-                <Image loader={() => fallbackImage} src={fallbackImage} alt={title} width={768} height={360} className={`rounded-t-2xl`} />
-              </div>
-              <div className="flex flex-col p-3 border-l border-b border-r border-accentColor-700 rounded-b-2xl border-opacity-10">
-                <span className='text-sm text-darkColor-100 opacity-50 self-end'>{date}</span>
-                <h4 className="text-xl font-bold text-secondaryColor-700 h-14 mt-4 mb-3" dangerouslySetInnerHTML={ { __html: title}} />
-                <div className="text-darkColor-100">{excerpt125char} ...</div>
-              </div> 
-            </a>
-          </Link>
-        </article>
-      )
-    })
-  }
-
   return (
     <div className={``}>
       <Head>
@@ -84,10 +61,7 @@ export default function Blog ({ data: { posts } }) {
           <div className='max-w-screen-lg mx-auto flex flex-col py-5 md:py-0'>
             <h1 className="text-darkColor-900 text-4xl sm:text-5xl font-bold mt-3 mb-8">Blog da Mari</h1>
               {renderFirstPost()}
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8'>
-              {renderMorePosts()}
-            </div>
-
+            <PostGrid posts={morePosts} />
           </div>
         </Container>
       </Section>
@@ -98,29 +72,7 @@ export default function Blog ({ data: { posts } }) {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query allPosts {
-        posts(first: 10000, orderBy: date_DESC, stage: PUBLISHED) {
-          excerpt
-          id
-          date
-          slug
-          title
-          stage
-          coverImage {
-            id
-            url
-            width
-            height
-          }
-          content {
-            html
-          }
-        }
-      }            
-    `
-  })
+  const { data } = await getAllPostsForBlog()
   
   return {
     props: { data }

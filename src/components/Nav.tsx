@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
+import LogoLight from '../../public/images/logotipo-mariane-barbosa-psicoloca-clínica.png'
+import { Links, WhatsAppUrl } from '../data/constants';
 import Image from 'next/image';
-import { CloseIcon, MenuIcon } from './Icons'
-import Button from './Button'
-import LogoLightV01 from '../../public/images/logo-mariane-barbosa.png'
-import LogoLighV02 from '../../public/images/logotipo-mariane-barbosa-psicoloca-clínica.png'
 import Link from 'next/link';
-import { Links, WhatsAppUrl } from '../data/links';
+import Button from './Button'
+import { useEffect, useState } from 'react';
+import { CloseIcon, MenuIcon } from './Icons'
 
 interface NavProps {
     bgDark?: boolean
@@ -14,6 +13,11 @@ interface NavProps {
 const Nav = ({ bgDark } : NavProps) => {
     const [open, setOpen] = useState(false);
     const [stickyNav, setStickyNav] = useState(false)   
+
+    const width = 247;
+    const height = 162;
+    const width65 = width*0.65
+    const height65 = height*0.65
 
     useEffect(() => {
         open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
@@ -40,21 +44,20 @@ const Nav = ({ bgDark } : NavProps) => {
     
 
   return (
-    <div className={`
-    px-4 lg:flex items-center mb-[-112px] transition-all duration-400 ease-in-out
+    <div className={`lg:flex items-center mb-[-112px] transition-all duration-400 ease-in-out
     ${bgDark ? 'bg-accentColor-900' : 'bg-transparentColor'}
     ${stickyNav ? 'fixed top-0 left-0 right-0 bg-accentColor-900 bg-opacity-95 z-50 drop-shadow-md' : ''}
     `}>
 
         <nav className={`
-            flex justify-between lg:grow h-28 items-center  max-w-[1360px] mx-auto 
+            flex justify-between px-4 lg:grow h-28 items-center max-w-[1360px] mx-auto 
         `
         }>
 
             <div className={`w-4/5 lg:w-1/5`}>
                 <Link href='/'>            
                     <Image 
-                    src={LogoLighV02} 
+                    src={LogoLight} 
                     alt='Logo Mariane Barbosa'
                     width={123.5}
                     height={81}
@@ -85,10 +88,10 @@ const Nav = ({ bgDark } : NavProps) => {
                 <li className={`justify-center flex lg:hidden`}>
                     <Link href='/'>            
                         <Image 
-                        src={LogoLighV02} 
+                        src={LogoLight} 
                         alt='Logo Mariane Barbosa'
-                        width={247}
-                        height={162}
+                        width={width65}
+                        height={height65}
                         className='cursor-pointer hover:animate-pulse'
                     />
                     </Link>

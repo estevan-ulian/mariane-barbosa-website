@@ -8,14 +8,12 @@ import client from "../../lib/apolloClient"
 import Head from "next/head"
 import SocialShareButtons from "../../components/SocialShareButtons"
 import CopyToClipBoard from "../../components/CopyToClipBoard"
-import { baseURL } from "../../data/constants"
+import { BASE_URL, getAllPostsBySlug, getPostBySlug } from "../../data/constants"
+import { GetStaticPropsContext } from "next"
 
 export default function Post({ data: { post } }) {  
-
-  const { title, excerpt, content, date, tags, slug, coverImage } = post
-  
-
-  const currentURL = `${baseURL}/blog/${slug}`
+  const { title, excerpt, content, date, slug, coverImage } = post
+  const currentURL = `${BASE_URL}/blog/${slug}`
 
   return (
     <>
@@ -83,51 +81,19 @@ export default function Post({ data: { post } }) {
 }
 
 export async function getStaticPaths() {
-  const { data } = await client.query({
-    query: gql`
-      query {
-        posts {
-          slug
-        }  
-      }      
-    `
-  })
-  
+  const { data } = await getAllPostsBySlug()  
+
   const paths = data.posts.map(post => {
     return {
-      params: { slug: post.slug}
+        params: { slug: post.slug}
     }
   })
-
+  
   return { paths, fallback: false }
 }
 
-export async function getStaticProps(context) {
-  const slug = context.params.slug
-  const { data } = await client.query({
-    query: gql`
-      query PostBySlug($slug: String!) {
-        post(where: {slug: $slug}) {          
-          id
-          slug
-          title
-          tags
-          date
-          excerpt
-          content {
-            html
-          }
-          coverImage {
-            height
-            id
-            width
-            url
-          }    
-        }
-      }        
-    `,
-    variables: { slug }
-  })
+export async function getStaticProps (context: GetStaticPropsContext) {
+  const { data } = await getPostBySlug(context)
 
   return {
     props: {
