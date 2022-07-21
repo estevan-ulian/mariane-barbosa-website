@@ -45,7 +45,7 @@ export default function Post({ data: { post } }) {
         <div className={`font-inter mx-auto sm:w-3/4 xl:w-4/5`}>        
           <div className="flex flex-col text-darkColor-900 ">
 
-            <span className="self-center font-light">{date}</span>
+            <span className="self-center font-light mt-8 text-sm opacity-50">{date}</span>
             <h1 className="text-center text-3xl md:text-5xl lg:text-6xl font-bold mt-3 mb-8">{title}</h1>
             <p className="mb-10 text-lg text-center font-light">{excerpt}</p>
 
