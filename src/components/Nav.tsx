@@ -2,15 +2,16 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { CloseIcon, MenuIcon } from './Icons'
 import Button from './Button'
-import LogoLight from '../../public/images/logo-mariane-barbosa.png'
+import LogoLightV01 from '../../public/images/logo-mariane-barbosa.png'
+import LogoLighV02 from '../../public/images/logotipo-mariane-barbosa-psicoloca-clínica.png'
 import Link from 'next/link';
 import { Links, WhatsAppUrl } from '../data/links';
 
 interface NavProps {
-    bg?: 'transparent' | 'accentColor-900'
+    bgDark?: boolean
 }
 
-const Nav = ({ bg } : NavProps) => {
+const Nav = ({ bgDark } : NavProps) => {
     const [open, setOpen] = useState(false);
     const [stickyNav, setStickyNav] = useState(false)   
 
@@ -27,9 +28,10 @@ const Nav = ({ bg } : NavProps) => {
 
         function watchScroll() {
             window.addEventListener("scroll", handleScroll);
-          }
-          watchScroll();
-          return () => {
+        }
+        watchScroll();
+        
+        return () => {
             window.removeEventListener("scroll", handleScroll);
           };
     }, [open])
@@ -39,22 +41,23 @@ const Nav = ({ bg } : NavProps) => {
 
   return (
     <div className={`
-    px-4 lg:flex items-center max-w-[1360px] mx-auto mb-[-80px] bg-${bg}
-    ${stickyNav ? 'transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 bg-accentColor-900 bg-opacity-95 z-50 drop-shadow-md' : ''}
+    px-4 lg:flex items-center mb-[-112px] transition-all duration-400 ease-in-out
+    ${bgDark ? 'bg-accentColor-900' : 'bg-transparentColor'}
+    ${stickyNav ? 'fixed top-0 left-0 right-0 bg-accentColor-900 bg-opacity-95 z-50 drop-shadow-md' : ''}
     `}>
 
         <nav className={`
-            flex justify-between lg:grow h-20 items-center 
+            flex justify-between lg:grow h-28 items-center  max-w-[1360px] mx-auto 
         `
         }>
 
             <div className={`w-4/5 lg:w-1/5`}>
                 <Link href='/'>            
                     <Image 
-                    src={LogoLight} 
+                    src={LogoLighV02} 
                     alt='Logo Mariane Barbosa'
-                    width={260}
-                    height={48}
+                    width={123.5}
+                    height={81}
                     className='cursor-pointer hover:animate-pulse'
                 />
                 </Link>
@@ -62,7 +65,7 @@ const Nav = ({ bg } : NavProps) => {
             
 
             <div onClick={() => setOpen(!open)}
-            className={`absolute z-20 right-3 top-6
+            className={`absolute z-20 right-3 top-10
             text-3xl cursor-pointer lg:hidden`}>
                 {!open ? <MenuIcon className='w-8 h-8 stroke-whiteColor' /> : <CloseIcon className='w-8 h-8 stroke-whiteColor' />}
             </div>
@@ -79,6 +82,17 @@ const Nav = ({ bg } : NavProps) => {
             ${open ? 'left-0' : 'left-[-100%]'}
             `}
             >
+                <li className={`justify-center flex lg:hidden`}>
+                    <Link href='/'>            
+                        <Image 
+                        src={LogoLighV02} 
+                        alt='Logo Mariane Barbosa'
+                        width={247}
+                        height={162}
+                        className='cursor-pointer hover:animate-pulse'
+                    />
+                    </Link>
+                </li>
                 {
                     Links.map((Link, i) => {
                         return (

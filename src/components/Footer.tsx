@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { BsWhatsapp } from 'react-icons/bs'
 import { AiOutlineMail } from 'react-icons/ai'
+import Image from "next/image";
+import LogoLighV02 from '../../public/images/logotipo-mariane-barbosa-psicoloca-clínica.png'
 
 export default function Footer() {
     return (
@@ -11,7 +13,15 @@ export default function Footer() {
                     <div className="flex flex-col sm:flex-row flex-wrap items-start justify-start">
 
                         <div className="sm:w-1/2 lg:w-1/4 mb-6 lg:mb-0">
-                        
+                            <Link href='/'>            
+                                <Image 
+                                src={LogoLighV02} 
+                                alt='Logo Mariane Barbosa'
+                                width={123.5}
+                                height={81}
+                                className='cursor-pointer hover:animate-pulse'
+                            />
+                            </Link>
                         </div>
                         
                         <div className="sm:w-1/2 lg:w-1/4 mb-6 lg:mb-0">

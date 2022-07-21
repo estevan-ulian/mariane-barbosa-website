@@ -55,6 +55,8 @@ module.exports = {
       backgroundOpacity: ['active'],
       backgroundImage: {
         'hero': "url('/images/bg-hero.jpg')",
+        'hero-tablet': "url('/images/bg-hero-tablet.jpg')",
+        'hero-mobile': "url('/images/bg-hero-mobile.jpg')",
         'pattern-balls': "url('/images/pattern-bg.jpg')",
         'flower-light': "url('/images/flower-light-color.svg')",
         'footer': "url('/images/bg-footer.jpg')",

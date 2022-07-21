@@ -21,7 +21,7 @@ interface ShareButtonProps {
 
 export default function SocialShareButtons({ url, title, coverImage }: ShareButtonProps) {
     return (
-        <>
+        <div className='flex flex-wrap gap-2'>
             <WhatsappShareButton
                 url={url}
                 title={title}
@@ -62,6 +62,6 @@ export default function SocialShareButtons({ url, title, coverImage }: ShareButt
             >
                 <TwitterIcon size={32} round />
             </TwitterShareButton>
-        </>
+        </div>
     )
 }

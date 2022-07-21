@@ -23,7 +23,12 @@ function renderPost() {
     const excerpt125words = excerpt.slice(0, 125)
 
     return (
-      <article key={id} className={`w-full relative`}>
+      <article key={id} 
+      className={
+        `w-full relative 
+        transition-all duration-300 hover:scale-105
+      `}
+      >
         <Link href={`/blog/${slug}`}>
           <a>
             <div className="w-full relative">
@@ -54,10 +59,10 @@ function renderPost() {
       height="full"
       bgSection="bg-hero" 
       bgPosition="bg-center">
-        <Container margin="mt-[40px]">
+        <Container margin="mt-[96px]">
           <Subtitle textColor="white" content="Psicóloga Clínica Mariane Barbosa" />
-          <h1 className="text-whiteColor text-3xl md:text-5xl lg:text-6xl font-bold mt-3 mb-8"><TextContrast block>Psicoterapia online</TextContrast> Atendimento individual</h1>
-          <p className="text-whiteColor mb-12 lg:pr-[50%]">Um trabalho de aprofundamento pessoal, que possibilita à pessoa a descoberta, reavaliação e trabalho sobre suas crenças e perspectivas da vida, fazendo com que ela se torne mais consciente das suas possibilidades e potencialidades.</p>
+          <h1 className="text-whiteColor text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 mb-8"><TextContrast block>Psicoterapia online</TextContrast> Atendimento individual</h1>
+          <p className="text-whiteColor mb-12 lg:pr-[50%] lg:text-lg font-light">Um trabalho de aprofundamento pessoal, que possibilita à pessoa a descoberta, reavaliação e trabalho sobre suas crenças e perspectivas da vida, fazendo com que ela se torne mais consciente das suas possibilidades e potencialidades.</p>
           <Button big url={WhatsAppUrl} content="Vamos Conversar ?" variation="bgPink" />
 
         </Container>
@@ -104,9 +109,12 @@ function renderPost() {
           </div>
 
           <div className="flex justify-center mt-4">
-            <Link href={WhatsAppUrl}>
-            <a className="text-center border-2 border-accentColor-700 rounded-full px-10 py-2 text-accentColor-700 font-bold text-lg md:text-xl transition-all duration-300 hover:border-secondaryColor-700 hover:bg-secondaryColor-700 hover:text-whiteColor">Agende sua Consulta</a>
-            </Link>              
+            <Button content="Agende sua Consulta" 
+            url={WhatsAppUrl}
+            variation='bgPink' 
+            big
+            />
+                        
           </div>
         </div>
       </Section>
@@ -116,7 +124,7 @@ function renderPost() {
           <div className="grid md:grid-cols-2 bg-flower-light-reverse bg-no-repeat bg-bottom bg-contain">
             <div className='columns-1 flex md:justify-end md:p-3'>
               <div>
-                <div className="shadow-[#F29799] shadow-img rounded-[40px] flex">
+                <div className="shadow-[#F29799] shadow-img rounded-[40px] flex w-4/5 sm:w-full">
                   <Image
                   src='/images/mariane-barbosa.jpg'
                   alt="Mariane Barbosa"          
@@ -127,7 +135,7 @@ function renderPost() {
                 </div>
               </div>
             </div>
-            <div className="columns-1 flex flex-col mt-5 md:mt-0 md:p-3 text-whiteColor text-base font-light">
+            <div className="columns-1 flex flex-col mt-5 md:mt-0 md:p-3 text-whiteColor">
               <Subtitle textColor="secondary" content="PSICÓLOGA CLÍNICA - CRP 06/17024" />
               <h1 className="font-bold text-3xl md:text-4xl mb-6">Mariane Barbosa</h1>
               <p className="opacity-75 mb-4">Como psicóloga clínica atuo para que cada indivíduo encontre sua própria verdade. Acredito que cada pessoa seja única e mereça ser respeitada, acredito no poder do ser humano para superar seus obstáculos e isso me motiva bastante!</p>

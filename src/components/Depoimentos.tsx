@@ -16,15 +16,15 @@ export default function Depoimentos() {
                 <Subtitle textColor='secondary' content="RELATO DOS MEUS PACIENTES ❤️" />
                 <h3 className="text-4xl text-whiteColor">Depoimentos</h3>
             </div>
-            <div className='max-w-[280px] w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto'>
+            <div className='max-w-[380px] w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto'>
                 <Slider settings={settings} className='max-w-full text-lightColor swiper-button-disabled md:swiper-button-enabled' >
                     {DEPOIMENTOS.map((value, index) => {
                         const { depoimento, idade, autor, profissao } = value
                         return (
                             <Slide key={index} className='w-auto text-center cursor-default pb-10'>
-                                <div className='w-full px-10'>
-                                    <p className='text-sm md:text-base'>{depoimento}</p>
-                                    <span className='text-sm text-secondaryColor-500 font-light'>{autor}., {idade} anos - {profissao}</span>
+                                <div className='w-full px-8'>
+                                    <p className='text-sm md:text-base opacity-75'>{depoimento}</p>
+                                    <span className='text-sm text-secondaryColor-500 font-light mt-2'>{autor}., {idade} anos - {profissao}</span>
                                 </div>
                             </Slide>
                         )

@@ -14,10 +14,10 @@ export default function Button({content, url, variation, big, handleClick}: Butt
     <button onClick={() => handleClick} className={`${variation === 'bgPink' ? 'transition-all duration-300 ease-out hover:scale-105': ''}`}>
       <a href={url} className={`
         border rounded-full
-        px-10 py-4 lg:py-2 
+        px-6 py-3 sm:px-10 sm:py-4 
         text-whiteColor text-base
         transition-all duration-300 ease-out
-        ${big ? 'text-lg md:text-xl' : 'text-base'}
+        ${big ? 'sm:text-lg' : 'text-base'}
         ${variation === 'bgPink' ? bgPink : bgTransparent}`}
       >
         {content}

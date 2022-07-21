@@ -27,7 +27,11 @@ export default function Section ({
       <section id={id} className={`
       flex flex-col min-w-full items-start justify-center 
       ${height === 'full' ? 'min-h-screen' : 'py-9'}
-      ${bgSection === 'darkGradient' ? 'bg-gradient-to-b from-accentColor-700 to-accentColor-900' : bgSection} ${bgPosition} ${bgSize} ${bgRepeat ? 'bg-repeat' : 'bg-no-repeat' }
+      ${bgSection === 'darkGradient' ? 'bg-gradient-to-b from-accentColor-700 to-accentColor-900' : bgSection}
+      ${bgSection === 'bg-hero' ? 'bg-hero-mobile sm:bg-hero-tablet lg:bg-hero' : bgSection} 
+      ${bgPosition} 
+      ${bgSize} 
+      ${bgRepeat ? 'bg-repeat' : 'bg-no-repeat' }
       ${bgFixed ? 'bg-fixed' : ''} 
       `}>
         {children}
