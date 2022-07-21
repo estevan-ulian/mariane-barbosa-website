@@ -8,12 +8,14 @@ import client from "../../lib/apolloClient"
 import Head from "next/head"
 import SocialShareButtons from "../../components/SocialShareButtons"
 import CopyToClipBoard from "../../components/CopyToClipBoard"
+import { baseURL } from "../../data/constants"
 
 export default function Post({ data: { post } }) {  
 
   const { title, excerpt, content, date, tags, slug, coverImage } = post
+  
 
-  const currentURL = `${process.env.NEXT_PUBLIC_PRODUCTION_BASE_URL}/blog/${slug}`
+  const currentURL = `${baseURL}/blog/${slug}`
 
   return (
     <>
@@ -62,15 +64,11 @@ export default function Post({ data: { post } }) {
               </div>                  
               <div className="postcontent flex flex-col gap-3" dangerouslySetInnerHTML={{ __html: content.html }} />
 
-              <div className="
-              flex flex-wrap flex-col sm:flex-row justify-between items-center gap-3 mx-auto py-4 mt-10
-              border-y border-y-darkColor-100 border-opacity-20"> 
-                <span className="text-darkColor-900 text-xl">Compartilhe este conteúdo!</span> 
-                <div className="flex flex-wrap flex-col-reverse sm:flex-row items-center justify-center gap-2">
-
+              <div className="flex flex-wrap flex-col sm:flex-row sm:justify-between items-center 
+              gap-3 mx-auto py-4 mt-10 border-y border-y-darkColor-100 border-opacity-20"> 
+                <span className="text-darkColor-900 text-xl text-center w-full lg:w-auto">Compartilhe este conteúdo!</span> 
+                <div className="w-full lg:w-auto flex flex-wrap flex-col-reverse sm:flex-row items-center justify-center gap-2">
                   <CopyToClipBoard content={currentURL} />
-                  
-
                   <SocialShareButtons url={currentURL} title={title} coverImage={coverImage.url} />
                 </div>
               </div>

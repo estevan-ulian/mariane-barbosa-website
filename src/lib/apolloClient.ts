@@ -1,7 +1,8 @@
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import { API_URL } from '../data/constants';
 
 const client = new ApolloClient({
-    uri: process.env.GRAPHQL_ENDPOINT,
+    uri: API_URL,
     cache: new InMemoryCache(),
   });
 
