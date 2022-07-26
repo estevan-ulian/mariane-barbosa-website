@@ -20,7 +20,7 @@ export default function Post({ data: { postBy } }) {
   const currentURL = `${BASE_URL}/blog/${slug}`; 
 
   function renderCategoriesOrTags(array, urlArchive) {
-    return array.edges.map((item, index) => {
+    return array?.edges?.map((item, index) => {
       const { id, name, slug } = item.node;
       const url = `${BASE_URL}/${urlArchive}/${slug}`;
       return (
@@ -120,16 +120,12 @@ export async function getStaticPaths() {
     }
   })
   
-  return { paths, fallback: false }
+  return { paths, fallback: false };
 }
 
 
 export async function getStaticProps (context: GetStaticPropsContext) {
-  const { data } = await WPGetPostBySlug(context) 
-  return {
-    props: {
-      data 
-    },
-    revalidate: 10
-  }
+  const { data } = await WPGetPostBySlug(context);
+
+  return { props: { data }, revalidate: 10 };
 }

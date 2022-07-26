@@ -1,7 +1,5 @@
-import { ReactNode } from "react"
-
 interface SectionProps {
-  children: ReactNode
+  children: any
   id?: string
   height: 'full' | 'py'
   bgSection?: 'bg-whiteColor' | 'bg-hero' | 'bg-flower-light' | 'bg-flower-light-reverse' | 'bg-pattern-balls' | 'bg-footer' | 'darkGradient'

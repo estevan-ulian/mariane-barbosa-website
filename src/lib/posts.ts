@@ -24,10 +24,10 @@ export async function WPGetAllPostsForBlog() {
 
 export async function WPGetAllPostsSlugs() {
     const { data } = await client.query({
-        query: WP_GET_ALL_POSTS_SLUGS
+        query: WP_GET_ALL_POSTS_SLUGS,
     })
 
-    return { data }
+    return { data };
 }
 
 export async function WPGetPostBySlug(context) {
