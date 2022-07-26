@@ -1,8 +1,8 @@
-import { FAQ } from "../data/faq";
+import { FAQS } from "../data/content";
 import Accordion from "./Accordion";
 
 export default function Faq() {
-    const FAQs = () => FAQ.map(faq => {
+    const FAQ = () => FAQS.map(faq => {
         const { id, question, answer } = faq
         return (
             <Accordion
@@ -17,7 +17,7 @@ export default function Faq() {
 
     return (
         <>
-            {FAQs()}
+            {FAQ()}
         </>
     )
 }

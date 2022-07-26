@@ -1,8 +1,7 @@
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
-import { API_URL } from '../data/constants';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-    uri: API_URL,
+    uri: process.env.WP_GRAPHQL_ENDPOINT,
     cache: new InMemoryCache(),
   });
 

@@ -1,8 +1,6 @@
-import { gql } from "@apollo/client";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import client from "../lib/apolloClient";
 import Nav from "../components/Nav";
 import Section from "../components/Section";
 import Container from "../components/Container";
@@ -11,13 +9,14 @@ import Cards from "../components/Cards";
 import Depoimentos from "../components/Depoimentos";
 import Faq from "../components/Faq";
 import Footer from "../components/Footer";
-import { WhatsAppUrl } from "../data/constants";
+import { WhatsAppUrl } from "../data/content";
 import TextContrast from "../components/TextContrast";
 import Button from "../components/Button";
 import PostGrid from "../components/PostGrid";
+import { WPGetAllPostsForHome } from "../lib/posts";
 
 export default function Home({ data: { posts } }) {
-
+  const postsForHome = posts.edges
   return (
     <>
       <Head>
@@ -32,12 +31,11 @@ export default function Home({ data: { posts } }) {
       height="full"
       bgSection="bg-hero" 
       bgPosition="bg-center">
-        <Container margin="mt-[96px]">
+        <Container $margin="mt-[96px]">
           <Subtitle textColor="white" content="Psicóloga Clínica Mariane Barbosa" />
-          <h1 className="text-whiteColor text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 mb-8"><TextContrast block>Psicoterapia online</TextContrast> Atendimento individual</h1>
-          <p className="text-whiteColor mb-12 lg:pr-[50%] lg:text-lg font-light">Um trabalho de aprofundamento pessoal, que possibilita à pessoa a descoberta, reavaliação e trabalho sobre suas crenças e perspectivas da vida, fazendo com que ela se torne mais consciente das suas possibilidades e potencialidades.</p>
-          <Button big url={WhatsAppUrl} content="Vamos Conversar ?" variation="bgPink" />
-
+          <h1 className="text-whiteColor"><TextContrast block className="text-4xl sm:text-5xl lg:text-6xl mb-6 font-bold">Psicoterapia online</TextContrast> Atendimento individual</h1>
+          <p className="text-whiteColor lg:pr-[50%] mb-8">Um trabalho de aprofundamento pessoal, que possibilita à pessoa a descoberta, reavaliação e trabalho sobre suas crenças e perspectivas da vida, fazendo com que ela se torne mais consciente das suas possibilidades e potencialidades.</p>
+          <Button url={WhatsAppUrl} $big content="Vamos Conversar ?" />
         </Container>
       </Section>
 
@@ -49,13 +47,12 @@ export default function Home({ data: { posts } }) {
       >
         <Container> 
             <Subtitle textColor="secondary" content="Qualidade de vida" />
-            <h2 className="text-darkColor-900 text-3xl md:text-5xl font-bold mt-3 mb-8">Por que fazer <span className="text-secondaryColor-700">terapia?</span></h2>
-            <p className='text-darkColor-100 lg:pr-[50%]'>Antes de tudo, psicoterapia não é sinônimo de doença. A psicoterapia serve para superar dificuldades que a vida nos apresenta e ajudar na prevenção de transtornos psicológicos que dificultam o convívio em sociedade.</p>
+            <h2 className="text-darkColor-900">Por que fazer <span className="text-secondaryColor-700 text-3xl sm:text-4xl lg:text-5xl mb-6  font-bold">terapia?</span></h2>
+            <p className='text-accentColor-700 lg:pr-[50%]'>Antes de tudo, psicoterapia não é sinônimo de doença. A psicoterapia serve para superar dificuldades que a vida nos apresenta e ajudar na prevenção de transtornos psicológicos que dificultam o convívio em sociedade.</p>
           <div className={`mt-16 grid md:grid-cols-2 gap-6`}>
             <Cards />
-            <Link href='/#faq'>
-            <a className="text-secondaryColor-700 font-bold text-xl">Está com dúvidas?</a></Link>
           </div>
+            <Link href='/#faq'><a className="text-secondaryColor-700 text-center mt-10 font-bold text-xl animate-bounce">Está com dúvidas?</a></Link>
         </Container>
       </Section>
 
@@ -68,25 +65,21 @@ export default function Home({ data: { posts } }) {
       bgFixed
       >
         <div className={`mx-auto max-w-[1360px] py-16 md:py-32 px-4 flex flex-col gap-8`}>
-          <div className="lg:w-3/4 mx-auto flex flex-col gap-8">
-            <h2 className="text-darkColor-900 text-3xl md:text-5xl text-center font-bold">Terapia <TextContrast>Online</TextContrast></h2>
-            <p className="text-darkColor-100 text-lg md:text-xl text-center">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
-            <p className="text-darkColor-100 text-sm text-center">Existem muitas plataformas seguras para que você possa realizar o seu atendimento online de uma maneira ética e confiável.</p>
+          <div className="lg:w-3/4 mx-auto flex flex-col">
+            <h2 className="text-darkColor-900 text-center">Terapia <TextContrast className="text-3xl sm:text-4xl lg:text-5xl mb-6  font-bold">Online</TextContrast></h2>
+            <p className="text-accentColor-700 text-center">A terapia online funciona como a presencial, mas por meio de encontros online. Pode ser realizada a terapia do conforto de sua casa, do seu trabalho ou outro lugar que esteja garantida a privacidade.</p>
+            <p className="text-accentColor-700 text-sm text-center">Existem muitas plataformas seguras para que você possa realizar o seu atendimento online de uma maneira ética e confiável.</p>
           </div>
 
           <div className="flex flex-wrap gap-4 justify-around lg:w-3/4 mx-auto">
-            <span><span className="text-secondaryColor-700 font-bold">✓</span> Relacionamento</span>
-            <span><span className="text-secondaryColor-700 font-bold">✓</span> Autoestima</span>
-            <span><span className="text-secondaryColor-700 font-bold">✓</span> Ansiedade</span>
-            <span><span className="text-secondaryColor-700 font-bold">✓</span> Depressão</span>
+            <span className="text-accentColor-700"><span className="text-secondaryColor-700 font-bold">✓</span> Relacionamento</span>
+            <span className="text-accentColor-700"><span className="text-secondaryColor-700 font-bold">✓</span> Autoestima</span>
+            <span className="text-accentColor-700"><span className="text-secondaryColor-700 font-bold">✓</span> Ansiedade</span>
+            <span className="text-accentColor-700"><span className="text-secondaryColor-700 font-bold">✓</span> Depressão</span>
           </div>
 
           <div className="flex justify-center mt-4">
-            <Button content="Agende sua Consulta" 
-            url={WhatsAppUrl}
-            variation='bgPink' 
-            big
-            />
+            <Button content="Agende sua Consulta" url={WhatsAppUrl} $big />
                         
           </div>
         </div>
@@ -110,11 +103,11 @@ export default function Home({ data: { posts } }) {
             </div>
             <div className="columns-1 flex flex-col mt-5 md:mt-0 md:p-3 text-whiteColor">
               <Subtitle textColor="secondary" content="PSICÓLOGA CLÍNICA - CRP 06/17024" />
-              <h1 className="font-bold text-3xl md:text-4xl mb-6">Mariane Barbosa</h1>
-              <p className="opacity-75 mb-4">Como psicóloga clínica atuo para que cada indivíduo encontre sua própria verdade. Acredito que cada pessoa seja única e mereça ser respeitada, acredito no poder do ser humano para superar seus obstáculos e isso me motiva bastante!</p>
-              <p className="opacity-75 mb-4">Acredito muito na interdisciplinaridade e nas parcerias profissionais e estou sempre buscando conhecimentos novos, ampliando a possibilidade de entregar o melhor para todos os meus pacientes.</p>
-              <p className="opacity-75 mb-4">Meu objetivo é criar um espaço acolhedor, onde a pessoa se sinta respeitada em suas individualidades, num lugar em que possa fazer uso de sua verdadeira história para construir soluções reais diante dos problemas.</p>
-              <p className="opacity-75 mb-4">Para ser feliz, é necessário ouvir as vozes interiores e reconhecer-se como alguém importante e merecedor do seu amor.</p>
+              <h2>Mariane Barbosa</h2>
+              <p className="opacity-75">Como psicóloga clínica atuo para que cada indivíduo encontre sua própria verdade. Acredito que cada pessoa seja única e mereça ser respeitada, acredito no poder do ser humano para superar seus obstáculos e isso me motiva bastante!</p>
+              <p className="opacity-75">Acredito muito na interdisciplinaridade e nas parcerias profissionais e estou sempre buscando conhecimentos novos, ampliando a possibilidade de entregar o melhor para todos os meus pacientes.</p>
+              <p className="opacity-75">Meu objetivo é criar um espaço acolhedor, onde a pessoa se sinta respeitada em suas individualidades, num lugar em que possa fazer uso de sua verdadeira história para construir soluções reais diante dos problemas.</p>
+              <p className="opacity-75">Para ser feliz, é necessário ouvir as vozes interiores e reconhecer-se como alguém importante e merecedor do seu amor.</p>
             </div>
           </div>        
           <Depoimentos />
@@ -128,9 +121,10 @@ export default function Home({ data: { posts } }) {
       bgRepeat
       bgFixed>      
             <Container>            
-              <div className="flex flex-col items-center w-full">
+              <div className="flex flex-col items-center w-full gap-3">
                 <Subtitle textColor="secondary" content="PERGUNTAS FREQUENTES" />
-                <h1 className="font-bold text-4xl md:text-6xl mb-6">FAQ</h1>
+                <h2 className="m-0">FAQ</h2>
+                <p className="text-accentColor-700 mb-6">Reservei este espaço para compartilhar e responder as perguntas mais frequentes.</p>
                 <Faq />
             </div>          
           </Container>
@@ -141,45 +135,27 @@ export default function Home({ data: { posts } }) {
 
           <div className="flex flex-col">
             <Subtitle textColor="secondary" content="POSTAGENS RECENTES" />
-            <h2 className="font-bold text-4xl md:text-6xl mb-6">Blog</h2>
+            <h2>Blog</h2>
             <p className="text-darkColor-100 md:w-1/2">Escrevo textos sobre autoestima, autoconhecimento e liberdade emocional para ajudar pessoas levando informações certas que contribuem para o bem-estar do leitor.</p>
           </div>
 
-          <PostGrid posts={posts}/>
+          <PostGrid posts={postsForHome}/>
 
           <div className="flex justify-center mt-12">            
-            <Button big url="/blog" content="Blog da Mari" variation="bgPink" />            
+            <Button $big url="/blog" content="Blog da Mari" />            
           </div>   
 
         </Container>
       </Section>
 
-        <Footer />
+      <Footer />
     </>
   )
 }
 
-export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query allPosts {
-        posts(first: 3, orderBy: date_DESC, stage: PUBLISHED) {
-          id
-          excerpt
-          slug
-          title
-          stage
-          date
-          coverImage {
-            url
-            width
-            height
-          }
-        }
-      }            
-    `
-  })
-  
+export async function getStaticProps() { 
+  const { data } = await WPGetAllPostsForHome();
+
   return {
     props: { data },
     revalidate: 10

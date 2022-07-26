@@ -1,4 +1,4 @@
-import { DEPOIMENTOS } from '../data/depoimentos'
+import { DEPOIMENTOS } from '../data/content'
 import { Slider, SliderProps, Slide } from './Slider/Index'
 import Subtitle from './Subtitle'
 

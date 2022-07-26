@@ -1,108 +1,133 @@
-import { gql } from "@apollo/client"
-import client from "../lib/apolloClient"
+import { gql } from "@apollo/client";
 
-export const BASE_URL = "https://mariane-barbosa-website.vercel.app"
-export const API_URL = process.env.GRAPHQL_ENDPOINT
-
-export const WhatsAppUrl = 'https://api.whatsapp.com/send?phone=5517991938867';
-
-export const Links = [
-  { name: 'Sobre Mim', url: '/#sobre-mim' },
-  { name: 'Blog da Mari', url: '/blog' },
-  { name: 'Depoimentos', url: '/#depoimentos' },
-  { name: 'FAQ', url: '/#faq' },
-  { name: 'Quer Ajuda?', url: '#contato' },
-]
-
-export async function getThreeFirstPostsForHome() {
-    const { data } = await client.query({
-        query: gql`
-          query allPosts {
-            posts(first: 3, orderBy: date_DESC, stage: PUBLISHED) {
-              id
-              excerpt
-              slug
-              title
-              stage
-              coverImage {
-                url
-                width
-                height
-              }
-            }
-          }            
-        `
-      })
-      return { data }
-}
-
-export async function getAllPostsForBlog() {
-    const { data } = await client.query({
-        query: gql`
-          query allPosts {
-            posts(first: 10000, orderBy: date_DESC, stage: PUBLISHED) {
-              excerpt
-              id
-              date
-              slug
-              title
-              stage
-              coverImage {
+export const WP_GET_ALL_POSTS_FOR_HOME = gql`
+  query getPostsForHome {
+    posts(first: 3, where: {orderby: {field: DATE, order: DESC}, status: PUBLISH}) {
+      edges {
+        node {
+          id
+          slug
+          title
+          excerpt(format: RENDERED)
+          date
+          status
+          categories {
+            edges {
+              node {
                 id
-                url
-                width
-                height
-              }
-              content {
-                html
-              }
-            }
-          }            
-        `
-      })
-      return { data }
-}
-
-export async function getAllPostsBySlug() {
-    const { data } = await client.query({
-        query: gql`
-          query {
-            posts {
-              slug
-            }  
-          }      
-        `
-    })
-
-    return { data }
-}
-
-export async function getPostBySlug(context) {
-    const slug = context.params.slug
-    const { data } = await client.query({
-        query: gql`
-        query PostBySlug($slug: String!) {
-            post(where: {slug: $slug}) {          
-                id
+                name
                 slug
-                title
-                tags
-                date
-                excerpt
-                content {
-                    html
-                }
-                coverImage {
-                    height
-                    id
-                    width
-                    url
-                }    
+              }
             }
-        }        
-        `,
-    variables: { slug }
-  })
+          }
+          featuredImage {
+            node {
+              altText
+              id
+              sourceUrl
+              mediaDetails {
+                sizes {
+                  sourceUrl
+                  width
+                  height
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
-  return { data }
-}
+export const WP_GET_ALL_POSTS_FOR_BLOG = gql`
+  query getAllPostsForBlog {
+    posts(where: {orderby: {order: DESC, field: DATE}, status: PUBLISH}) {
+      edges {
+        node {
+          id
+          title
+          slug
+          date
+          excerpt(format: RENDERED)
+          featuredImage {
+            node {
+              altText
+              mediaDetails {
+                sizes {
+                  sourceUrl
+                  width
+                  height
+                }
+              }
+              slug
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+export const WP_GET_ALL_POSTS_SLUGS = gql`
+  query AllPostsSlugs {
+    posts {
+      edges {
+        node {
+          slug
+        }
+      }
+    }
+  }
+`
+
+export const WP_GET_POST_BY_SLUG = gql`
+  query getPostBySlug($slug: String) {
+    postBy(slug: $slug) {
+      id
+      slug
+      date
+      title(format: RENDERED)
+      excerpt
+      featuredImage {
+        node {
+          altText
+          mediaItemUrl
+          mediaDetails {
+            width
+            height
+          }
+        }
+      }
+      categories {
+        edges {
+          node {
+            id
+            slug
+            name
+          }
+        }
+      }
+      tags {
+        edges {
+          node {
+            id
+            name
+            slug
+          }
+        }
+      }    
+      seo {
+        metaDesc
+        title
+        metaKeywords
+        opengraphImage {
+          altText
+          mediaItemUrl
+        }
+      }
+      content(format: RENDERED)    
+    }
+  }
+`

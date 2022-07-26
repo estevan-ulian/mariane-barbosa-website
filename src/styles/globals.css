@@ -4,45 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
+@layer components {
+    html, body {
+        @apply overflow-x-hidden scroll-smooth font-inter;
+    }
 
-.swiper-pagination-bullet-active {
-    background-color: #F29799 !important;
-}
+    p, span {
+        @apply text-base lg:text-lg mb-4 font-light; 
+    }
 
-.swiper-button-prev::after, .swiper-button-next::after {
-    color: #F29799 !important;    
-    font-size: 24px !important;
-    font-weight: bold;
-}
+    h1 {
+        @apply text-4xl sm:text-5xl lg:text-6xl mb-6 font-bold;
+    }
 
-.swiper-button-next {
-    position: absolute;
-    top: 40% !important;
-    right: 0 !important;
-}
+    h2 {    
+        @apply text-3xl sm:text-4xl lg:text-5xl mb-6  font-bold;
+    }
 
-.swiper-button-prev {
-    position: absolute;
-    top: 40% !important;
-    left: 0 !important;
-}
+    h3 {
+        @apply text-2xl sm:text-3xl lg:text-4xl mb-6  font-bold;
+    }
 
-.postcontent p {
-    @apply mb-2 break-words
-}
+    h4 {
+        @apply text-xl sm:text-2xl lg:text-3xl mb-6  font-bold;
+    }
 
-.postcontent h2{
-    @apply text-2xl mt-4 mb-2 font-bold
-}
+    h5 {
+        @apply text-lg sm:text-xl lg:text-2xl mb-6  font-bold;
+    }
 
-.postcontent h3{
-    @apply text-xl mt-4 mb-2 font-medium
-}
-
-.postcontent h4{
-    @apply text-lg mt-4 mb-2 font-medium
+    h6 {
+        @apply text-base sm:text-lg lg:text-xl mb-6  font-bold;
+    }
 }

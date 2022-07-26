@@ -8,6 +8,6 @@ interface SubtitleProps {
 export default function Subtitle({ content, textColor }: SubtitleProps) {
     
     return (
-        <h3 className={`${textColor === 'white' ? 'text-whiteColor' : 'text-secondaryColor-700'} uppercase text-sm font-bold mb-4`} >{content}</h3>
+        <h3 className={`${textColor === 'white' ? 'text-whiteColor' : 'text-secondaryColor-700'} uppercase text-sm font-bold mb-2`} >{content}</h3>
     )
 }
