@@ -114,7 +114,7 @@ export default function Post({ data: { postBy } }) {
 export async function getStaticPaths() {
   const { data } = await WPGetAllPostsSlugs();
 
-  const paths = data.posts.edges.map(post => {
+  const paths = data?.posts?.edges?.map(post => {
     return {
       params: { slug: post.node.slug }
     }
