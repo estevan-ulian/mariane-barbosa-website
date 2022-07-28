@@ -131,3 +131,50 @@ export const WP_GET_POST_BY_SLUG = gql`
     }
   }
 `
+
+export const WP_GET_CATEGORY_BY_SLUG = gql`
+  query CategoryBySlug($slug: ID!) {
+    category(id: $slug, idType: SLUG) {
+      databaseId
+      description
+      id
+      name
+      slug
+    }
+}
+`
+
+export const WP_GET_ALL_POSTS_BY_CATEGORY_ID = gql`
+query GetPostsByCategoryId {
+  posts {
+    edges {
+      node {
+        date
+        id
+        title
+        slug
+        seo {
+          metaDesc
+          title
+        }
+        featuredImage {
+          node {
+            mediaItemUrl
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+        categories {
+          edges {
+            node {
+              categoryId
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`

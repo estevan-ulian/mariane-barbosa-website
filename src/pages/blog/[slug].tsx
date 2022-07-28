@@ -19,21 +19,21 @@ export default function Post({ data: { postBy } }) {
   const postDate = convertDate(date);
   const currentURL = `${BASE_URL}/blog/${slug}`; 
 
-  function renderCategoriesOrTags(array, urlArchive) {
-    return array?.edges?.map((item, index) => {
-      const { id, name, slug } = item.node;
-      const url = `${BASE_URL}/${urlArchive}/${slug}`;
-      return (
-        <span key={id} className="mb-0">
-          <Link href={url}>
-            <a>
-              {name}{array.edges.length - 1 === index ? '' : ', '}
-            </a>
-          </Link>
-        </span>
-      );
-    });    
-  }; 
+  // function renderCategoriesOrTags(array, urlArchive) {
+  //   return array?.edges?.map((item, index) => {
+  //     const { id, name, slug } = item.node;
+  //     const url = `${BASE_URL}/${urlArchive}/${slug}`;
+  //     return (
+  //       <span key={id} className="mb-0">
+  //         <Link href={url}>
+  //           <a>
+  //             {name}{array.edges.length - 1 === index ? '' : ', '}
+  //           </a>
+  //         </Link>
+  //       </span>
+  //     );
+  //   });    
+  // }; 
 
   return (
     <>
@@ -67,7 +67,8 @@ export default function Post({ data: { postBy } }) {
               
               <h1 className="text-secondaryColor-700 text-center mb-0 mt-8">{title}</h1>
               <div className="flex items-center justify-center py-4 gap-3 font-light text-accentColor-900 opacity-50 ">              
-                <span className="mb-0">{postDate} | {renderCategoriesOrTags(categories, 'categoria')}</span>
+              {/* <span className="mb-0">{postDate} | {renderCategoriesOrTags(categories, 'categoria')}</span> */}
+              <span className="mb-0">{postDate}</span>
               </div>
               <p className="mb-10 text-lg text-center font-light" dangerouslySetInnerHTML={ { __html: metaDesc } }></p>
 
@@ -83,7 +84,7 @@ export default function Post({ data: { postBy } }) {
                 </div>                  
                 <div className="postcontent flex flex-col gap-3" dangerouslySetInnerHTML={{ __html: content }} ></div>
 
-                <div className="flex justify-between gap-2 flex-wrap mt-16">
+                {/* <div className="flex justify-between gap-2 flex-wrap mt-16">
                     <div className="flex gap-2 flex-wrap">
                       <span className="font-bold">Categorias: </span>
                       {renderCategoriesOrTags(categories, 'categoria')}
@@ -91,7 +92,7 @@ export default function Post({ data: { postBy } }) {
                     <div className="flex gap-1 flex-wrap">
                       <span className="font-bold">Tags: </span>{renderCategoriesOrTags(tags, 'tag')}
                     </div>
-                </div>
+                </div> */}
 
                 <div className="flex flex-wrap flex-col sm:flex-row sm:justify-between items-center 
                 gap-3 mx-auto py-4 mt-10 border-y border-y-darkColor-100 border-opacity-20"> 
