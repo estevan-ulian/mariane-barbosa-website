@@ -27,10 +27,10 @@ export default function NavLinks({ onClick }: NavLinksProps) {
     return (
         <>
             {renderLinks(LINKS)}
-            <div>
+            <div className="lg:hidden">
                 <Link href={InstagramUrl}>
-                    <a target='_blank' className="text-whiteColor">
-                        <BsInstagram className="w-6 h-6" />
+                    <a target='_blank' className="text-whiteColor flex-row-reverse flex gap-2">
+                        @psi.marianebarbosa<BsInstagram className="w-6 h-6" />
                     </a>
                 </Link>
             </div>
