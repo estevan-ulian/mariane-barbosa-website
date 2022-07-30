@@ -4,6 +4,7 @@ export const LogoDark = '/images/logotipo_dark-mariane-barbosa-psicologa-clinica
 export const LogoWidth = 247;
 export const LogoHeight = 162;
 export const WhatsAppUrl = 'https://api.whatsapp.com/send?phone=5517991938867';
+export const InstagramUrl = 'https://www.instagram.com/psi.marianebarbosa';
 
 export const LINKS = [
   { name: 'Sobre Mim', url: '/#sobre-mim' },

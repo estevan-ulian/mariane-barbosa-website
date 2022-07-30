@@ -62,7 +62,7 @@ export default function Post({ data: { postBy } }) {
 
       <Section height="py" >
         <Container>
-          <div className={`font-inter mx-auto sm:w-3/4 xl:w-4/5`}>        
+          <div className={`font-inter mx-auto w-full sm:w-3/4 xl:w-4/5`}>        
             <div className="flex flex-col text-darkColor-900 ">
               
               <h1 className="text-secondaryColor-700 text-center mb-0 mt-8">{title}</h1>
@@ -74,8 +74,8 @@ export default function Post({ data: { postBy } }) {
 
             </div>
               <div className="self-center w-full">
-                <div className="sm:w-3/4 mx-auto mb-12">
-                  <Image                     
+                <div className="w-full sm:w-3/4 mx-auto mb-12 relative">
+                  <Image            
                     src={mediaItemUrl} 
                     width={mediaDetails.width} 
                     height={mediaDetails.height} 

@@ -1,16 +1,15 @@
+import Link from "next/link";
+import { AiFillInstagram } from "react-icons/ai";
+import { BsInstagram } from "react-icons/bs";
 import tw from "tailwind-styled-components";
-import { LINKS } from '../../data/content';
+import { InstagramUrl, LINKS } from '../../data/content';
 import SingleLink from "./SingleLink";
 
 interface NavLinksProps {
     onClick: () => void
 }
 
-export default function NavLinks({ onClick }: NavLinksProps) {
-
-    const AllLinks = tw.li`
-        lg:flex lg:items-center lg:justify-center
-    `
+export default function NavLinks({ onClick }: NavLinksProps) {    
 
     function renderLinks(LINKS) {
         return LINKS.map((link, i) => {
@@ -28,6 +27,17 @@ export default function NavLinks({ onClick }: NavLinksProps) {
     return (
         <>
             {renderLinks(LINKS)}
+            <div>
+                <Link href={InstagramUrl}>
+                    <a target='_blank' className="text-whiteColor">
+                        <BsInstagram className="w-6 h-6" />
+                    </a>
+                </Link>
+            </div>
         </>
     )
 }
+
+const AllLinks = tw.li`
+        lg:flex lg:items-center lg:justify-center
+    `

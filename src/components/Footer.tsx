@@ -29,7 +29,7 @@ export default function Footer() {
                             <h4 className="text-whiteColor text-lg mb-2">Línks Úteis</h4>
                             <ul>
                                 <li><Link href="/#faq"><a className="text-lightColor text-sm">Perguntas Frequentes</a></Link></li>
-                                <li><Link href="/politica-de-privacidade"><a className="text-lightColor text-sm">Política de Privacidade</a></Link></li>
+                                <li><Link href="/"><a className="text-lightColor text-sm">Política de Privacidade</a></Link></li>
                             </ul>
                         </div>
 
